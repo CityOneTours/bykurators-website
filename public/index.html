@@ -1,0 +1,2350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>By Kurators | Design Curation & Project Management — Dubai, UAE</title>
+  <meta name="description"
+    content="By Kurators is a Dubai-based design consultancy curating India's finest architecture and interior design studios for residential, hospitality, and developer projects across the Middle East and East Africa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --soil: #3D2E22;
+      --bark: #6B5744;
+      --clay: #C4A882;
+      --fog: #E8DDD2;
+      --sand: #F2EBE0;
+      --white: #FFFFFF;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--sand);
+      color: var(--soil);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 64px;
+      transition: background 0.5s, padding 0.4s, box-shadow 0.4s;
+    }
+
+    nav.scrolled {
+      background: rgba(20, 12, 6, 0.80);
+      backdrop-filter: blur(10px);
+      padding: 16px 64px;
+      box-shadow: 0 1px 0 var(--clay);
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      text-decoration: none;
+    }
+
+    .nav-logo .wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 18px;
+      letter-spacing: 0.55em;
+      color: var(--sand);
+      text-transform: uppercase;
+      transition: color 0.5s;
+    }
+
+    nav.scrolled .nav-logo .wordmark {
+      color: var(--soil);
+    }
+
+    .nav-logo .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: var(--clay);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: rgba(242, 235, 224, 0.85);
+      transition: color 0.3s;
+    }
+
+    nav.scrolled .nav-links a {
+      color: white;
+    }
+
+    .nav-links a:hover {
+      color: var(--clay);
+    }
+
+    .nav-cta {
+      font-weight: 400 !important;
+      border: 1px solid var(--clay);
+      padding: 9px 22px;
+      transition: background 0.3s, color 0.3s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--clay) !important;
+      color: var(--soil) !important;
+    }
+
+    nav.scrolled .nav-cta {
+      color: white;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.07);
+      transition: transform 8s ease;
+      will-change: transform;
+    }
+
+    .slide.active .slide-bg {
+      transform: scale(1);
+    }
+
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(105deg, rgba(20, 12, 6, 0.80) 0%, rgba(20, 12, 6, 0.38) 50%, rgba(20, 12, 6, 0.12) 100%);
+    }
+
+    .slide-content {
+      position: absolute;
+      top: 50%;
+      left: 9%;
+      z-index: 10;
+      max-width: 700px;
+      opacity: 0;
+      transform: translateY(calc(-50% + 28px));
+      transition: opacity 1s 0.6s ease, transform 1s 0.6s ease;
+    }
+
+    .slide.active .slide-content {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
+
+    .slide-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .slide-label::before {
+      content: '';
+      width: 44px;
+      height: 1px;
+      background: var(--clay);
+      flex-shrink: 0;
+    }
+
+    .slide-headline {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(44px, 5.8vw, 80px);
+      line-height: 1.05;
+      letter-spacing: 0.035em;
+      color: var(--sand);
+      margin-bottom: 16px;
+    }
+
+    .slide-headline em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--clay);
+      display: block;
+    }
+
+    .slide-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 19px;
+      letter-spacing: 0.04em;
+      color: rgba(242, 235, 224, 0.72);
+      margin-bottom: 48px;
+      max-width: 500px;
+      line-height: 1.65;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 38px;
+      background: var(--clay);
+      color: var(--soil);
+      border: 1px solid var(--clay);
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--clay);
+    }
+
+    .btn-ghost {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 38px;
+      background: transparent;
+      color: rgba(242, 235, 224, 0.85);
+      border: 1px solid rgba(242, 235, 224, 0.35);
+      transition: border-color 0.3s, color 0.3s;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--sand);
+      color: var(--sand);
+    }
+
+    .hero-controls {
+      position: absolute;
+      bottom: 52px;
+      left: 9%;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 30px;
+      height: 2px;
+      background: rgba(242, 235, 224, 0.25);
+      cursor: pointer;
+      transition: background 0.4s, width 0.4s;
+    }
+
+    .dot.active {
+      background: var(--clay);
+      width: 52px;
+    }
+
+    .hero-nav {
+      position: absolute;
+      right: 64px;
+      bottom: 52px;
+      z-index: 20;
+      display: flex;
+      gap: 10px;
+    }
+
+    .hero-nav button {
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(242, 235, 224, 0.25);
+      background: transparent;
+      color: var(--sand);
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .hero-nav button:hover {
+      border-color: var(--clay);
+      background: rgba(196, 168, 130, 0.12);
+    }
+
+    .hero-counter {
+      position: absolute;
+      right: 64px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      writing-mode: vertical-rl;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: rgba(242, 235, 224, 0.38);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 52px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: floatDown 2.4s ease-in-out infinite;
+    }
+
+    .scroll-hint span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 9px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(242, 235, 224, 0.32);
+    }
+
+    @keyframes floatDown {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0)
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(7px)
+      }
+    }
+
+    /* BRAND STATEMENT */
+    .brand-statement {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
+
+    .brand-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+    }
+
+    .brand-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 8s ease;
+    }
+
+    .brand-img:hover img {
+      transform: scale(1.04);
+    }
+
+    .brand-img-caption {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 11px;
+      color: rgba(242, 235, 224, 0.5);
+      letter-spacing: 0.1em;
+    }
+
+    .brand-text {
+      background: var(--sand);
+      padding: 80px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-text::before {
+      content: 'K';
+      position: absolute;
+      right: -20px;
+      bottom: -40px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 280px;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(196, 168, 130, 0.07);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .section-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-eyebrow::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--clay), transparent);
+      max-width: 100px;
+    }
+
+    .brand-pull {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(22px, 3vw, 38px);
+      line-height: 1.45;
+      color: var(--soil);
+      margin-bottom: 36px;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-rule {
+      width: 56px;
+      height: 1px;
+      background: var(--clay);
+      margin-bottom: 36px;
+    }
+
+    .brand-body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13.5px;
+      line-height: 1.95;
+      color: var(--bark);
+    }
+
+    .brand-body p+p {
+      margin-top: 18px;
+    }
+
+    /* SERVICES */
+    .services {
+      background: var(--soil);
+      position: relative;
+    }
+
+    .services-fade {
+      height: 70px;
+      background: linear-gradient(to bottom, #f2ebe000, var(--soil));
+    }
+
+    .services-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 64px 120px;
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(30px, 3.8vw, 52px);
+      letter-spacing: 0.09em;
+      color: var(--sand);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .services-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 16px;
+      color: rgba(232, 221, 210, 0.4);
+      max-width: 240px;
+      text-align: right;
+      line-height: 1.7;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(196, 168, 130, 0.1);
+      transition: border-color 0.4s;
+    }
+
+    .service-card:hover {
+      border-color: rgba(196, 168, 130, 0.32);
+    }
+
+    .service-img {
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+
+    .service-card:hover .service-img img {
+      transform: scale(1.06);
+    }
+
+    .service-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, var(--soil) 100%);
+    }
+
+    .service-body {
+      padding: 44px 48px 52px;
+      /* background: rgba(255, 255, 255, 0.02); */
+      transition: background 0.4s;
+    }
+
+    .service-card:hover .service-body {
+      background: rgba(196, 168, 130, 0.04);
+    }
+
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 60px;
+      color: rgba(196, 168, 130, 0.09);
+      position: absolute;
+      top: 290px;
+      right: 36px;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .service-line {
+      width: 36px;
+      height: 1px;
+      background: var(--clay);
+      margin-bottom: 24px;
+    }
+
+    .service-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 20px;
+      letter-spacing: 0.1em;
+      color: var(--sand);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .service-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.9;
+      color: rgba(232, 221, 210, 0.58);
+      margin-bottom: 32px;
+    }
+
+    .link-arrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--clay);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: gap 0.3s, color 0.3s;
+    }
+
+    .link-arrow::after {
+      content: '→';
+      font-family: serif;
+      font-style: normal;
+      font-size: 15px;
+    }
+
+    .link-arrow:hover {
+      gap: 22px;
+      color: var(--fog);
+    }
+
+    /* HOW IT WORKS */
+    .how-it-works {
+      background: var(--fog);
+    }
+
+    .hiw-band {
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hiw-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 55%;
+      display: block;
+    }
+
+    .hiw-band-overlay {
+      position: absolute;
+      inset: 0;
+      /* background: linear-gradient(to bottom, var(--fog) 0%, transparent 28%, transparent 72%, var(--fog) 100%); */
+    }
+
+    .hiw-band-caption {
+      position: absolute;
+      bottom: 24px;
+      right: 40px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 11px;
+      color: rgba(242, 235, 224, 0.5);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    .footer-top>div:first-child {
+      text-align: left;
+    }
+
+    .footer-top>div:nth-child(2),
+    .footer-top>div:nth-child(3) {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(2) .footer-col-title,
+    .footer-top>div:nth-child(3) .footer-col-title {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(4) {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(4) .footer-col-title {
+      text-align: center;
+    }
+
+    .hiw-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 80px 64px 120px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .hiw-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(28px, 3.5vw, 46px);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--soil);
+      margin-bottom: 28px;
+      line-height: 1.1;
+    }
+
+    .hiw-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(17px, 2vw, 23px);
+      line-height: 1.65;
+      color: var(--soil);
+      margin-bottom: 24px;
+    }
+
+    .hiw-body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--bark);
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      padding: 36px 0;
+      border-bottom: 1px solid rgba(196, 168, 130, 0.5);
+      transition: padding-left 0.3s;
+    }
+
+    .step:first-child {
+      border-top: 1px solid rgba(196, 168, 130, 0.5);
+    }
+
+    .step:hover {
+      padding-left: 14px;
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 38px;
+      color: var(--clay);
+      min-width: 38px;
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    .step-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--soil);
+      margin-bottom: 8px;
+    }
+
+    .step-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 1.85;
+      color: var(--bark);
+    }
+
+    /* PARTNERS */
+    .partners {
+      background: var(--sand);
+      padding: 120px 64px;
+    }
+
+    .partners-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .partners-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-bottom: 72px;
+      align-items: end;
+    }
+
+    .partners-h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(28px, 3.5vw, 48px);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--soil);
+      line-height: 1.1;
+    }
+
+    .partners-body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13.5px;
+      line-height: 1.9;
+      color: var(--bark);
+    }
+
+    .partners-body p+p {
+      margin-top: 14px;
+    }
+
+    .partners-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 19px;
+      color: var(--clay);
+      margin-top: 28px;
+      line-height: 1.55;
+    }
+
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3px;
+      margin-bottom: 52px;
+    }
+
+    .partner-card {
+      background: var(--fog);
+      border: 1px solid rgba(196, 168, 130, 0.38);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.3s;
+    }
+
+    .partner-card:hover {
+      box-shadow: 0 8px 40px rgba(61, 46, 34, 0.1);
+    }
+
+    .partner-card.anchor {
+      background: var(--soil);
+      border-color: var(--soil);
+    }
+
+    .partner-card-img {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .partner-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+
+    .partner-card:hover .partner-card-img img {
+      transform: scale(1.08);
+    }
+
+    .partner-card-img-ov {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(61, 46, 34, 0.35) 100%);
+    }
+
+    .partner-body {
+      padding: 28px 28px 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .partner-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 8px;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--clay);
+    }
+
+    .partner-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      letter-spacing: 0.07em;
+      color: var(--soil);
+    }
+
+    .partner-card.anchor .partner-name {
+      color: var(--sand);
+    }
+
+    .partner-city {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 12px;
+      color: var(--bark);
+    }
+
+    .partner-card.anchor .partner-city {
+      color: var(--clay);
+    }
+
+    .partner-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: 1px solid rgba(196, 168, 130, 0.4);
+      color: var(--bark);
+      padding: 4px 10px;
+      display: inline-block;
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    .partner-card.anchor .partner-tag {
+      border-color: rgba(196, 168, 130, 0.32);
+      color: var(--clay);
+    }
+
+    .partner-placeholder {
+      background: transparent;
+      border: 1px dashed rgba(196, 168, 130, 0.28);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      gap: 10px;
+    }
+
+    .partner-placeholder span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(107, 87, 68, 0.28);
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+      background: var(--soil);
+      padding: 120px 64px;
+    }
+
+    .portfolio-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .portfolio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+    }
+
+    .portfolio-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.75;
+      color: rgba(232, 221, 210, 0.5);
+      max-width: 380px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 3px;
+      margin-bottom: 52px;
+    }
+
+    .proj-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .proj-card:nth-child(1) {
+      grid-row: 1 / span 2;
+    }
+
+    .proj-inner {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-card:nth-child(1) .proj-inner {
+      min-height: 620px;
+    }
+
+    .proj-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.9s ease;
+    }
+
+    .proj-card:hover .proj-inner img {
+      transform: scale(1.07);
+    }
+
+    .proj-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(20, 12, 6, 0.88) 0%, rgba(20, 12, 6, 0.1) 55%, transparent 100%);
+      transition: background 0.4s;
+    }
+
+    .proj-card:hover .proj-overlay {
+      background: linear-gradient(to top, rgba(20, 12, 6, 0.92) 0%, rgba(20, 12, 6, 0.2) 60%, transparent 100%);
+    }
+
+    .proj-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--clay);
+      transition: width 0.5s ease;
+      z-index: 2;
+    }
+
+    .proj-card:hover .proj-line {
+      width: 100%;
+    }
+
+    .proj-info {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      right: 28px;
+      z-index: 2;
+    }
+
+    .proj-type {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 9px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 7px;
+    }
+
+    .proj-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 18px;
+      letter-spacing: 0.07em;
+      color: var(--sand);
+      margin-bottom: 5px;
+    }
+
+    .proj-loc {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 12px;
+      color: rgba(242, 235, 224, 0.48);
+    }
+
+    /* DESIGNERS */
+    .designers {
+      background: var(--fog);
+    }
+
+    .designers-band {
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .designers-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    .designers-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to right, rgba(31, 26, 26, 0.92) 0%, rgba(232, 221, 210, 0.5) 38%, transparent 68%);
+    }
+
+    .designers-band-text {
+      position: absolute;
+      top: 50%;
+      left: 72px;
+      transform: translateY(-50%);
+      z-index: 2;
+      max-width: 520px;
+    }
+
+    .designers-band-h {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(28px, 3.5vw, 48px);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: whitesmoke;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .designers-band-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 18px;
+      color: var(--clay);
+      margin-bottom: 28px;
+    }
+
+    .designers-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 80px 64px 120px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .designers-body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13.5px;
+      line-height: 1.9;
+      color: var(--bark);
+      margin-bottom: 40px;
+    }
+
+    .designers-panel {
+      background: var(--soil);
+      padding: 52px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .designers-panel::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(196, 168, 130, 0.05);
+    }
+
+    .panel-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 1.55;
+      color: var(--fog);
+      margin-bottom: 24px;
+    }
+
+    .panel-attr {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--clay);
+    }
+
+    .nav-logo .logo-img {
+      height: 40px;
+      /* adjust as needed */
+      width: auto;
+      display: block;
+    }
+
+    .panel-img {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      margin-top: 36px;
+    }
+
+    .panel-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* CLOSING */
+    .closing {
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .closing-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .closing-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .closing-bg-ov {
+      position: absolute;
+      inset: 0;
+      background: rgba(25, 14, 7, 0.84);
+    }
+
+    .closing-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 600px;
+      padding: 100px 40px;
+    }
+
+    .closing-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 28px;
+    }
+
+    .closing-headline {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(38px, 5vw, 68px);
+      letter-spacing: 0.08em;
+      color: var(--sand);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      line-height: 1.05;
+    }
+
+    .closing-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 19px;
+      line-height: 1.65;
+      color: rgba(232, 221, 210, 0.58);
+      margin-bottom: 52px;
+    }
+
+    .closing-email {
+      display: block;
+      margin-top: 22px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: rgba(232, 221, 210, 0.32);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .closing-email:hover {
+      color: var(--clay);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #251a11;
+      padding: 72px 64px 48px;
+      border-top: 1px solid rgba(196, 168, 130, 0.16);
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 64px;
+      padding-bottom: 52px;
+      border-bottom: 1px solid rgba(196, 168, 130, 0.1);
+      margin-bottom: 36px;
+    }
+
+    .footer-wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 17px;
+      letter-spacing: 0.52em;
+      color: var(--sand);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--clay);
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .footer-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(232, 221, 210, 0.26);
+    }
+
+    .footer-col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 20px;
+      text-align: end;
+    }
+
+    .footer-col a {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      color: rgba(232, 221, 210, 0.42);
+      text-decoration: none;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+      text-align: end;
+    }
+
+    .footer-col a:hover {
+      color: var(--clay);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: rgba(232, 221, 210, 0.18);
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.22s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.34s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.46s;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+
+      nav,
+      nav.scrolled {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
+
+      .brand-statement {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-img {
+        min-height: 340px;
+      }
+
+      .brand-text {
+        padding: 64px 48px;
+      }
+
+      .services-inner {
+        padding: 0 36px 100px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hiw-content {
+        grid-template-columns: 1fr;
+        padding: 64px 36px 100px;
+      }
+
+      .partners {
+        padding: 100px 36px;
+      }
+
+      .partner-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .portfolio {
+        padding: 100px 36px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .proj-card:nth-child(1) {
+        grid-row: auto;
+        grid-column: 1 / span 2;
+      }
+
+      .designers-content {
+        grid-template-columns: 1fr;
+        padding: 64px 36px 100px;
+      }
+
+      .designers-band-text {
+        left: 36px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      footer {
+        padding: 64px 36px 40px;
+      }
+
+      .hero-counter {
+        display: none;
+      }
+
+      .slide-content {
+        left: 6%;
+        max-width: 88%;
+      }
+    }
+
+    @media (max-width: 680px) {
+      nav {
+        padding: 16px 20px;
+      }
+
+      nav.scrolled {
+        padding: 12px 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .brand-text {
+        padding: 48px 24px;
+      }
+
+      .partners {
+        padding: 80px 20px;
+      }
+
+      .portfolio {
+        padding: 80px 20px;
+      }
+
+      .partner-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proj-card:nth-child(1) {
+        grid-column: 1;
+        grid-row: auto;
+      }
+
+      .partners-header {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+
+      .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      footer {
+        padding: 48px 20px 36px;
+      }
+
+      .designers-band {
+        height: 280px;
+      }
+
+      .designers-band-text {
+        left: 20px;
+        right: 20px;
+      }
+
+      .closing-inner {
+        padding: 80px 24px;
+      }
+
+      .hero-nav {
+        right: 20px;
+        bottom: 40px;
+      }
+
+      .hero-controls {
+        left: 5%;
+        bottom: 40px;
+      }
+    }
+
+    /* MOBILE MENU BUTTON */
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      background: none;
+      border: none;
+      color: var(--sand);
+      cursor: pointer;
+    }
+
+    /* MOBILE VIEW */
+    @media (max-width: 680px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(20, 12, 6, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 20px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      background: #251a11;
+      padding: 72px 64px 48px;
+      border-top: 1px solid rgba(196, 168, 130, 0.16);
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 52px;
+      border-bottom: 1px solid rgba(196, 168, 130, 0.1);
+      margin-bottom: 36px;
+    }
+
+    .footer-top>div:first-child {
+      text-align: left;
+      max-width: 220px;
+    }
+
+    .footer-top>div:first-child .logo-img {
+      height: 40px;
+      width: auto;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .footer-top>div:first-child .footer-desc {
+      max-width: 220px;
+    }
+
+    .footer-top>div:nth-child(2),
+    .footer-top>div:nth-child(3) {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(2) .footer-col-title,
+    .footer-top>div:nth-child(3) .footer-col-title {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(4) {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(4) .footer-col-title {
+      text-align: center;
+    }
+
+    .footer-wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 17px;
+      letter-spacing: 0.52em;
+      color: var(--sand);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--clay);
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .footer-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(232, 221, 210, 0.26);
+    }
+
+    .footer-col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+      color: var(--clay);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .footer-top>div:first-child {
+      text-align: left;
+      max-width: 220px;
+    }
+
+    .footer-top>div:first-child .footer-desc {
+      max-width: 220px;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.84);
+      word-break: normal;
+      hyphens: none;
+      overflow-wrap: normal;
+      white-space: normal;
+      width: 220px;
+    }
+
+    .footer-top>div:first-child {
+      text-align: left;
+      width: 320px;
+      flex-shrink: 0;
+    }
+
+    .footer-top>div:first-child .logo-img {
+      height: 40px;
+      width: auto;
+      object-fit: cover;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .footer-top>div:first-child .footer-desc {
+      width: 400px;
+      max-width: 380px;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.641);
+      word-break: normal;
+      hyphens: none;
+      white-space: normal;
+    }
+
+    .footer-top>div:nth-child(4) {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(4) .footer-col-title {
+      text-align: center;
+    }
+    .footer-top > div:nth-child(4) {
+  text-align: right;
+}
+
+.footer-top > div:nth-child(4) .footer-col-title {
+  text-align: center !important;
+  display: block !important;
+}
+
+.footer-top > div:nth-child(4) a {
+  display: block !important;
+  text-align: center;
+}
+.center{
+  text-align: center !important;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      <img src="images/logo-Photoroom.png" alt="By Kurators Logo" class="logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="about.html">ABOUT</a>
+
+      <a href="services.html">SERVICES</a>
+      <a href="partners.html">PARTNERS</a>
+      <a href="work-with-us.html">WORK WITH US</a>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle">
+      ☰
+    </button>
+  </nav>
+
+  <!-- HERO CAROUSEL -->
+  <section class="hero" id="hero">
+
+    <div class="slide active">
+      <div class="slide-bg" style="background-image:url('room images/GUEST BEDROOM 01.jpg.jpeg')">
+      </div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-label">Dubai · Middle East · East Africa</div>
+        <h1 class="slide-headline">Where Beauty<br><em>Meets Intention.</em></h1>
+        <p class="slide-sub">Design talent rooted in India's rich creative tradition — and the most interesting studios
+          from around the world.</p>
+        <div class="hero-ctas">
+          <a href="#services" class="btn-primary">Explore Our Services</a>
+          <a href="#contact" class="btn-ghost">Work With Us</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('images/handcrafted-wooden-decorative-sculptures (1).jpg')">
+      </div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-label">Design Curation</div>
+        <h1 class="slide-headline">Curated Studio<br><em>Excellence.</em></h1>
+        <p class="slide-sub">We match residential homeowners, hospitality groups, and developers with studios whose work
+          genuinely suits them.</p>
+        <div class="hero-ctas">
+          <a href="#services" class="btn-primary">Design Curation</a>
+          <a href="#partners" class="btn-ghost">Meet Our Partners</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('room images/ceo_Interactive LightMix.jpg.jpeg')">
+      </div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-label">Project Management</div>
+        <h1 class="slide-headline">We Stay<br><em>in the Room.</em></h1>
+        <p class="slide-sub">End-to-end project management — clear milestones, honest timelines, single accountability,
+          from brief to handover.</p>
+        <div class="hero-ctas">
+          <a href="#services" class="btn-primary">Project Management</a>
+          <a href="#contact" class="btn-ghost">Start a Conversation</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-controls">
+      <div class="dot active" onclick="goToSlide(0)"></div>
+      <div class="dot" onclick="goToSlide(1)"></div>
+      <div class="dot" onclick="goToSlide(2)"></div>
+    </div>
+    <div class="hero-nav">
+      <button id="prevBtn">&#8592;</button>
+      <button id="nextBtn">&#8594;</button>
+    </div>
+    <div class="hero-counter" id="heroCounter">01 / 03</div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <svg width="14" height="22" viewBox="0 0 14 22" fill="none">
+        <rect x="1" y="1" width="12" height="20" rx="6" stroke="#F2EBE0" stroke-width="1" />
+        <circle cx="7" cy="7" r="2" fill="#F2EBE0">
+          <animate attributeName="cy" values="6;14;6" dur="2.2s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0.15;1" dur="2.2s" repeatCount="indefinite" />
+        </circle>
+      </svg>
+    </div>
+  </section>
+
+  <!-- BRAND STATEMENT -->
+  <section class="brand-statement" id="about">
+    <div class="brand-img reveal">
+      <img src="room images/ceo_Interactive LightMix.jpg.jpeg" alt="Curated interior" loading="lazy">
+      <div class="brand-img-caption">Considered spaces. Deliberate choices.</div>
+    </div>
+    <div class="brand-text">
+      <div class="section-eyebrow reveal">Our Conviction</div>
+      <p class="brand-pull reveal reveal-delay-1">"There's a certain kind of space that stops you. Not because it's
+        showy — because everything in it feels like it was placed with purpose."</p>
+      <div class="brand-rule reveal reveal-delay-2"></div>
+      <div class="brand-body reveal reveal-delay-3">
+        <p>By Kurators was built on a conviction: that great design is as much about who shapes a space as how. We are
+          based in Dubai and work across the Middle East and East Africa — bringing clients the best of India's design
+          world, and beyond.</p>
+        <p>Our roster is anchored in the Indian design tradition, a heritage rich enough to anchor any room. But we
+          curate globally, because great design doesn't stop at one border.</p>
+        <p>We make introductions that change outcomes. And then we stay in the room until the job is done.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-fade"></div>
+    <div class="services-inner">
+      <div class="services-header">
+        <div>
+          <div class="section-eyebrow reveal" style="color:var(--clay)">What We Do</div>
+          <h2 class="section-title reveal reveal-delay-1">Our Services</h2>
+        </div>
+        <p class="services-tagline reveal reveal-delay-2">We are not a directory.<br>We are a practice.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-img">
+            <img src="room images/RECEPTION_Interactive LightMix.jpg.jpeg" alt="Design Curation" loading="lazy">
+            <div class="service-img-overlay"></div>
+          </div>
+          <span class="service-num">01</span>
+          <div class="service-body">
+            <div class="service-line"></div>
+            <h3 class="service-name">Design Curation</h3>
+            <p class="service-desc">Finding the right design studio for a project is harder than most people think. Fit
+              matters — aesthetically, temperamentally, sometimes geographically. Our roster starts with India's most
+              accomplished architects and interior designers. From there, we curate outward: practices from across the
+              world whose work meets the same standard.<br><br>We match residential homeowners, hospitality groups, and
+              developers with studios whose work and working style genuinely suits them. Based in Dubai, we serve
+              clients throughout the Middle East and East Africa.</p>
+            <a href="services.html" class="link-arrow">Learn More About Design Curation</a>
+          </div>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-img">
+            <img src="room images/workstation_Interactive LightMix.jpg.jpeg" alt="Project Management" loading="lazy">
+            <div class="service-img-overlay"></div>
+          </div>
+          <span class="service-num">02</span>
+          <div class="service-body">
+            <div class="service-line"></div>
+            <h3 class="service-name">Project Management Consultancy</h3>
+            <p class="service-desc">Even the best-designed project can unravel without the right person watching over
+              it. By Kurators provides end-to-end project management for interiors and architecture — from scoping and
+              vendor selection through to site supervision and handover.<br><br>Our approach is straightforward: clear
+              milestones, honest timelines, and a single point of accountability. No surprises where they can be
+              avoided. And when they can't, a plan ready before the conversation.</p>
+            <a href="services.html" class="link-arrow">Learn More About PMC</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="process">
+    <div class="hiw-band">
+      <img src="room images/Reception-v1.jpg.jpeg" alt="Design studio process" loading="lazy">
+      <div class="hiw-band-overlay"></div>
+      <div class="hiw-band-caption">Every project starts with a conversation.</div>
+    </div>
+    <div class="hiw-content">
+      <div class="hiw-left reveal">
+        <div class="section-eyebrow">The Process</div>
+        <h2 class="hiw-title">How It<br>Works</h2>
+        <p class="hiw-intro">We keep it simple. You tell us what you're building, where you are in the process, and what
+          you need.</p>
+        <p class="hiw-body">Whether you come to us at the ideas stage or mid-chaos, there's usually a way in. We listen
+          — properly. Then we put together a path that makes sense for your project, your timeline, and your budget.</p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="step"><span class="step-num">1</span>
+          <div>
+            <div class="step-title">Tell us about your project</div>
+            <p class="step-text">Share what you're building, your location, timeline, and aspirations. No formal brief
+              required — a conversation is enough to start.</p>
+          </div>
+        </div>
+        <div class="step"><span class="step-num">2</span>
+          <div>
+            <div class="step-title">We curate the right team</div>
+            <p class="step-text">We match your project with studios whose work and working style genuinely fits —
+              drawing from our global roster, anchored in India's design tradition.</p>
+          </div>
+        </div>
+        <div class="step"><span class="step-num">3</span>
+          <div>
+            <div class="step-title">We see it through</div>
+            <p class="step-text">From introductions through to handover, we stay engaged — managing milestones,
+              coordinating vendors, and ensuring the project delivers what it promised.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners" id="partners">
+    <div class="partners-inner">
+      <div class="partners-header reveal">
+        <div>
+          <div class="section-eyebrow">Our Network</div>
+          <h2 class="partners-h2">Our Design<br>Partners</h2>
+        </div>
+        <div>
+          <p class="partners-body">The studios we work with are chosen carefully. We look beyond portfolio aesthetics —
+            we care about how a practice thinks, how it communicates, and whether it can deliver at distance.</p>
+          <p class="partners-body" style="margin-top:14px">India is where we start: a design tradition with genuine
+            depth, producing work that holds its own anywhere in the world. From that foundation, we look outward.</p>
+          <p class="partners-quote">"Our home is Dubai. Our clients are across the Middle East and East Africa. Our
+            partners are wherever the best work is being made."</p>
+        </div>
+      </div>
+      <div class="partner-grid reveal">
+        <div class="partner-card anchor">
+          <div class="partner-card-img">
+            <img src="room images/meeting_Interactive LightMix.jpg.jpeg" alt="Aum Architects" loading="lazy">
+            <div class="partner-card-img-ov"></div>
+          </div>
+          <div class="partner-body">
+            <span class="partner-label">Anchor Partner</span>
+            <div class="partner-name">Aum Architects</div>
+            <div class="partner-city">Mumbai, India</div>
+            <span class="partner-tag">Architecture · Interiors</span>
+          </div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-card-img">
+            <img src="room images/MD CABIN_2.jpg.jpeg" alt="Studio India" loading="lazy">
+            <div class="partner-card-img-ov"></div>
+          </div>
+          <div class="partner-body">
+            <span class="partner-label">Design Partner</span>
+            <div class="partner-name">Studio — India</div>
+            <div class="partner-city">New Delhi, India</div>
+            <span class="partner-tag">Residential · Hospitality</span>
+          </div>
+        </div>
+        <!-- <div class="partner-placeholder">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="opacity:0.25">
+            <circle cx="14" cy="14" r="13" stroke="#C4A882" stroke-width="1" stroke-dasharray="3 3" />
+            <line x1="14" y1="8" x2="14" y2="20" stroke="#C4A882" stroke-width="1" />
+            <line x1="8" y1="14" x2="20" y2="14" stroke="#C4A882" stroke-width="1" />
+          </svg>
+          <span>Incoming Partner</span>
+        </div>
+        <div class="partner-placeholder">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="opacity:0.25">
+            <circle cx="14" cy="14" r="13" stroke="#C4A882" stroke-width="1" stroke-dasharray="3 3" />
+            <line x1="14" y1="8" x2="14" y2="20" stroke="#C4A882" stroke-width="1" />
+            <line x1="8" y1="14" x2="20" y2="14" stroke="#C4A882" stroke-width="1" />
+          </svg>
+          <span>Incoming Partner</span>
+        </div> -->
+      </div>
+      <div class="reveal"><a href="partners.html" class="link-arrow" style="color:var(--bark)">Meet Our Design
+          Partners</a></div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <div class="portfolio-inner">
+      <div class="portfolio-header reveal">
+        <div>
+          <div class="section-eyebrow" style="color:var(--clay)">Our Work</div>
+          <h2 class="section-title">Selected Projects</h2>
+        </div>
+        <p class="portfolio-intro">Spaces that look like the people who live or work in them. Intentional. Personal.
+          Built to last.</p>
+      </div>
+      <div class="project-grid reveal">
+        <div class="proj-card">
+          <div class="proj-inner">
+            <img src="room images/GUEST BEDROOM 01.jpg.jpeg" alt="Private Villa Dubai" loading="lazy">
+            <div class="proj-overlay"></div>
+            <div class="proj-line"></div>
+            <div class="proj-info">
+              <div class="proj-type">Residential</div>
+              <div class="proj-name">Private Villa</div>
+              <div class="proj-loc">Dubai, UAE</div>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-inner">
+            <img src="room images/meeting_Interactive LightMix.jpg (1).jpeg" alt="Boutique Hotel Nairobi"
+              loading="lazy">
+            <div class="proj-overlay"></div>
+            <div class="proj-line"></div>
+            <div class="proj-info">
+              <div class="proj-type">Hospitality</div>
+              <div class="proj-name">Boutique Hotel</div>
+              <div class="proj-loc">Nairobi, Kenya</div>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-inner">
+            <img src="images/outdoor-deck.jpg" alt="Penthouse Abu Dhabi" loading="lazy">
+            <div class="proj-overlay"></div>
+            <div class="proj-line"></div>
+            <div class="proj-info">
+              <div class="proj-type">Developer</div>
+              <div class="proj-name">Penthouse Collection</div>
+              <div class="proj-loc">Abu Dhabi, UAE</div>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-inner">
+            <img src="room images/BAR-1.jpg.jpeg" alt="Safari Lodge Tanzania" loading="lazy">
+            <div class="proj-overlay"></div>
+            <div class="proj-line"></div>
+            <div class="proj-info">
+              <div class="proj-type">Hospitality</div>
+              <div class="proj-name">Safari Lodge</div>
+              <div class="proj-loc">Tanzania</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="reveal" style="text-align:center"><a href="#" class="link-arrow"
+          style="color:rgba(232,221,210,0.55)">View All Projects</a></div> -->
+    </div>
+  </section>
+
+  <!-- DESIGNERS -->
+  <section class="designers" id="designers">
+    <div class="designers-band">
+      <img src="images/interior-decoration-inspired-by-mexican-folklore.jpg" alt="Architecture studio" loading="lazy">
+      <div class="designers-band-text">
+        <div class="section-eyebrow reveal" style="color:var(--clay)">For Studios &amp; Practices</div>
+        <h2 class="designers-band-h reveal reveal-delay-1">Designers<br>&amp; Studios</h2>
+        <p class="designers-band-sub reveal reveal-delay-2">Serious work. Ambitions beyond your home market.</p>
+        <div class="reveal reveal-delay-3"><a href="partners.html" class="btn-primary">Learn About the Partner
+            Programme</a></div>
+      </div>
+    </div>
+    <div class="designers-content">
+      <div class="reveal">
+        <div class="section-eyebrow">The Opportunity</div>
+        <p class="designers-body">By Kurators is actively growing its network of design partners — studios we can
+          represent, refer, and collaborate with across the Middle East and East Africa. We are particularly interested
+          in India-based studios ready to expand internationally, and in exceptional global practices whose work brings
+          something new to the region.<br><br>We're not building a directory. We're building a practice. That
+          distinction matters — it means fewer partners, closer relationships, and real work together in the market.</p>
+        <a href="partners.html" class="link-arrow" style="color:var(--bark)">Learn About the Partner Programme</a>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="designers-panel">
+          <p class="panel-quote">"We're not building a directory. We're building a practice. That distinction matters."
+          </p>
+          <span class="panel-attr">— By Kurators</span>
+          <div class="panel-img">
+            <img src="room images/GUEST BEDROOM 02 TOILET.jpg.jpeg" alt="Studio blueprints" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing" id="contact">
+    <div class="closing-bg">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=80&auto=format&fit=crop"
+        alt="Luxury interior" loading="lazy">
+      <div class="closing-bg-ov"></div>
+    </div>
+    <div class="closing-inner">
+      <div class="closing-eyebrow reveal">Get in Touch</div>
+      <h2 class="closing-headline reveal reveal-delay-1">Ready<br>to Start?</h2>
+      <p class="closing-sub reveal reveal-delay-2">Tell us about your project — or simply introduce yourself. We're a
+        small team and we read everything.</p>
+      <div class="reveal reveal-delay-3"><a href="mailto:hello@bykurators.com" class="btn-primary">Get in Touch</a>
+      </div>
+      <a href="mailto:hello@bykurators.com" class="closing-email reveal reveal-delay-4">hello@bykurators.com</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a href="#" class="nav-logo">
+            <img src="images/logo-Photoroom 2.png" alt="By Kurators Logo" class="logo-img">
+            <!-- </a>          <span class="footer-tagline">Beautiful spaces, deliberately sourced.</span> -->
+            <p class="footer-desc">Design curation and project management consultancy, based in Dubai. Curating
+              India's best design talent and the world's most interesting studios for clients across the
+              Middle East and East Africa.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <a href="services.html" class="center">Design Curation</a>
+          <a href="services.html">Project Management</a>
+          <a href="work-with-us.html" class="center">Partner Programme</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <a href="about.html">About</a>
+          <a href="partners.html">Design Partners</a>
+          <a href="#">Selected Projects</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div>
+          <a href="mailto:hello@bykurators.com">hello@bykurators.com</a>
+          <a href="#">bykurators.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 By Kurators. All rights reserved.</p>
+        <p class="footer-copy">Dubai, United Arab Emirates</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+    let cur = 0, timer;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const counter = document.getElementById('heroCounter');
+    const total = slides.length;
+
+    function goToSlide(n) {
+      slides[cur].classList.remove('active');
+      dots[cur].classList.remove('active');
+      cur = (n + total) % total;
+      slides[cur].classList.add('active');
+      dots[cur].classList.add('active');
+      counter.textContent = String(cur + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+      clearInterval(timer);
+      timer = setInterval(() => goToSlide(cur + 1), 6500);
+    }
+    document.getElementById('nextBtn').onclick = () => goToSlide(cur + 1);
+    document.getElementById('prevBtn').onclick = () => goToSlide(cur - 1);
+    timer = setInterval(() => goToSlide(cur + 1), 6500);
+
+    let tx = 0;
+    document.getElementById('hero').addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
+    document.getElementById('hero').addEventListener('touchend', e => {
+      const d = tx - e.changedTouches[0].clientX;
+      if (Math.abs(d) > 48) goToSlide(cur + (d > 0 ? 1 : -1));
+    });
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+  <script src="/cms.js"></script>
+</body>
+
+</html>

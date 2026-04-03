@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work With Us | Join the By Kurators Partner Network — Dubai</title>
+  <meta name="description"
+    content="By Kurators is building a network of exceptional design studios, architects, and trusted trade partners for projects across the Middle East and East Africa. If your work meets the standard, we want to hear from you.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --soil: #3D2E22;
+      --bark: #6B5744;
+      --clay: #C4A882;
+      --fog: #E8DDD2;
+      --sand: #F2EBE0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--sand);
+      color: var(--soil);
+      overflow-x: hidden
+    }
+
+    .nav-logo .logo-img {
+      height: 40px;
+      /* adjust as needed */
+      width: auto;
+      display: block;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 26px 64px;
+      transition: background .5s, padding .4s, box-shadow .4s
+    }
+
+    nav.scrolled {
+      background: rgba(20, 12, 6, 0.80);
+      backdrop-filter: blur(10px);
+      padding: 16px 64px;
+      box-shadow: 0 1px 0 var(--clay);
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-decoration: none
+    }
+
+    .nav-logo .wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 18px;
+      letter-spacing: .55em;
+      color: var(--sand);
+      text-transform: uppercase;
+      transition: color .5s
+    }
+
+    nav.scrolled .nav-logo .wordmark {
+      color: var(--soil)
+    }
+
+    .nav-logo .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 9px;
+      letter-spacing: .15em;
+      color: var(--clay)
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      align-items: center
+    }
+
+    .nav-links a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: rgba(242, 235, 224, .85);
+      transition: color .3s
+    }
+
+    nav.scrolled .nav-links a {
+      color: white
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--clay)
+    }
+
+    .nav-cta {
+      font-weight: 400 !important;
+      border: 1px solid var(--clay);
+      padding: 8px 20px;
+      transition: background .3s, color .3s !important
+    }
+
+    .nav-cta:hover {
+      background: var(--clay) !important;
+      color: var(--soil) !important
+    }
+
+    nav.scrolled .nav-cta {
+      color: white !important
+    }
+
+    /* HERO */
+    .page-hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      border-bottom: 2px solid rgb(89, 53, 3) !important;
+
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      animation: heroZoom 8s ease forwards
+    }
+
+    @keyframes heroZoom {
+      from {
+        transform: scale(1.06)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(20, 12, 6, .82) 0%, rgba(20, 12, 6, .4) 55%, rgba(20, 12, 6, .1) 100%)
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 64px 80px;
+      max-width: 920px
+    }
+
+    .hero-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      opacity: 0;
+      animation: fadeUp .9s .4s forwards
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--clay)
+    }
+
+    .page-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(52px, 7vw, 100px);
+      line-height: 1.0;
+      letter-spacing: .04em;
+      color: var(--sand);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp .9s .6s forwards
+    }
+
+    .page-hero h1 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--clay);
+      text-transform: none
+    }
+
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      color: rgba(242, 235, 224, .72);
+      max-width: 700px;
+      opacity: 0;
+      animation: fadeUp .9s .8s forwards
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* OPPORTUNITY */
+    .opportunity {
+      background: var(--sand);
+      padding: 0
+    }
+
+    .opp-band {
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      position: relative
+    }
+
+    .opp-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      transition: transform 10s ease
+    }
+
+    .opp-band:hover img {
+      transform: scale(1.04)
+    }
+
+    .opp-band-overlay {
+      position: absolute;
+      inset: 0;
+      /* background: linear-gradient(to bottom, transparent 25%, rgba(242, 235, 224, .9) 80%, var(--sand) 100%) */
+    }
+
+    .opp-band-caption {
+      position: absolute;
+      top: 52px;
+      right: 64px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 11px;
+      color: rgba(242, 235, 224, .55);
+      letter-spacing: .1em
+    }
+
+    .opp-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 60px 64px 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px
+    }
+
+    .section-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px
+    }
+
+    .section-eyebrow::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--clay), transparent);
+      max-width: 100px
+    }
+
+    .opp-h {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(28px, 3.5vw, 46px);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--soil);
+      margin-bottom: 36px;
+      line-height: 1.1
+    }
+
+    .opp-body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13.5px;
+      line-height: 1.95;
+      color: var(--bark)
+    }
+
+    .opp-body p+p {
+      margin-top: 18px
+    }
+
+    .opp-highlight {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 21px;
+      color: var(--clay);
+      line-height: 1.55;
+      padding: 32px 36px;
+      border: 1px solid rgba(196, 168, 130, .35);
+      background: var(--fog);
+      margin-top: 0
+    }
+
+    .opp-stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px
+    }
+
+    .opp-stat {
+      background: var(--fog);
+      border: 1px solid rgba(196, 168, 130, .3);
+      padding: 36px 32px;
+      text-align: center;
+      transition: background .3s
+    }
+
+    .opp-stat:hover {
+      background: white
+    }
+
+    .opp-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 52px;
+      color: var(--clay);
+      line-height: 1;
+      margin-bottom: 8px
+    }
+
+    .opp-stat-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--bark)
+    }
+
+    /* PROGRAMME */
+    .programme {
+      background: var(--soil);
+      padding: 120px 64px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .programme-inner {
+      max-width: 1280px;
+      margin: 0 auto
+    }
+
+    .prog-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 80px;
+      align-items: end
+    }
+
+    .prog-h {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(32px, 4vw, 56px);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--sand);
+      line-height: 1.1
+    }
+
+    .prog-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.65;
+      color: rgba(232, 221, 210, .58)
+    }
+
+    .prog-img-bar {
+      width: 100%;
+      height: 340px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 72px
+    }
+
+    .prog-img-bar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+      transition: transform 8s ease
+    }
+
+    .prog-img-bar:hover img {
+      transform: scale(1.04)
+    }
+
+    .prog-img-bar-overlay {
+      position: absolute;
+      inset: 0;
+      /* background: linear-gradient(to bottom, var(--soil) 0%, transparent 20%, transparent 80%, var(--soil) 100%) */
+    }
+
+    .prog-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 72px
+    }
+
+    .prog-col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(196, 168, 130, .2)
+    }
+
+    .prog-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0
+    }
+
+    .prog-list li {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.75;
+      color: rgba(232, 221, 210, .6);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(196, 168, 130, .1);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px
+    }
+
+    .prog-list li::before {
+      content: '—';
+      color: var(--clay);
+      flex-shrink: 0
+    }
+
+    /* ONBOARDING */
+    .onboarding {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3px;
+      margin-bottom: 60px
+    }
+
+    .ob-step {
+      background: rgba(255, 255, 255, .025);
+      border: 1px solid rgba(196, 168, 130, .12);
+      padding: 40px 32px;
+      transition: background .4s, border-color .4s
+    }
+
+    .ob-step:hover {
+      background: rgba(196, 168, 130, .06);
+      border-color: rgba(196, 168, 130, .35)
+    }
+
+    .ob-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 48px;
+      color: rgba(196, 168, 130, .25);
+      line-height: 1;
+      margin-bottom: 16px
+    }
+
+    .ob-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 12px
+    }
+
+    .ob-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 1.8;
+      color: rgba(232, 221, 210, .55)
+    }
+
+    /* CONTRACTORS */
+    .contractors {
+      background: var(--fog);
+      padding: 120px 64px
+    }
+
+    .contractors-inner {
+      max-width: 1280px;
+      margin: 0 auto
+    }
+
+    .cont-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin: 60px 0
+    }
+
+    .cont-img-col {
+      overflow: hidden;
+      position: relative
+    }
+
+    .cont-img-col img {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      object-fit: cover;
+      display: block;
+      transition: transform .8s ease
+    }
+
+    .cont-img-col:hover img {
+      transform: scale(1.04)
+    }
+
+    .cont-body {
+      background: var(--sand);
+      border: 1px solid rgba(196, 168, 130, .3);
+      padding: 60px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center
+    }
+
+    .cont-h {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(24px, 3vw, 38px);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--soil);
+      margin-bottom: 28px;
+      line-height: 1.1
+    }
+
+    .cont-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13.5px;
+      line-height: 1.9;
+      color: var(--bark);
+      margin-bottom: 32px
+    }
+
+    .cont-who {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 40px
+    }
+
+    .cont-who li {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12.5px;
+      color: var(--bark);
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(196, 168, 130, .25);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      line-height: 1.6
+    }
+
+    .cont-who li::before {
+      content: '·';
+      color: var(--clay);
+      flex-shrink: 0;
+      font-size: 20px;
+      line-height: 1.1
+    }
+
+    /* HOW CONVO STARTS */
+    .convo {
+      background: var(--soil);
+      padding: 0;
+      position: relative;
+      overflow: hidden
+    }
+
+    .convo-bg {
+      position: absolute;
+      inset: 0
+    }
+
+    .convo-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: .15
+    }
+
+    .convo-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 18, 10, .75)
+    }
+
+    .convo-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 120px 64px
+    }
+
+    .convo-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-bottom: 72px;
+      align-items: end
+    }
+
+    .convo-h {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(32px, 4vw, 56px);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--sand);
+      line-height: 1.05
+    }
+
+    .convo-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 19px;
+      line-height: 1.65;
+      color: rgba(232, 221, 210, .55)
+    }
+
+    .convo-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3px;
+      margin-bottom: 64px
+    }
+
+    .convo-step {
+      border: 1px solid rgba(196, 168, 130, .15);
+      padding: 36px 32px;
+      transition: border-color .4s, background .4s
+    }
+
+    .convo-step:hover {
+      border-color: rgba(196, 168, 130, .4);
+      background: rgba(196, 168, 130, .04)
+    }
+
+    .cs-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 44px;
+      color: rgba(196, 168, 130, .2);
+      line-height: 1;
+      margin-bottom: 14px
+    }
+
+    .cs-t {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 12px
+    }
+
+    .cs-d {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 1.8;
+      color: rgba(232, 221, 210, .55)
+    }
+
+    .convo-cta {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px
+    }
+
+    .convo-cta-h {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(28px, 3.5vw, 46px);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 8px;
+      line-height: 1.1
+    }
+
+    .opp-stat-num {
+      font-family: 'Poppins', 'Segoe UI Symbol', 'Arial Unicode MS', sans-serif;
+    }
+
+    .opp-stat-num {
+      display: inline-block;
+      transform: scaleX(0.9);
+    }
+
+    .convo-cta-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 18px;
+      color: rgba(232, 221, 210, .5);
+      margin-bottom: 28px
+    }
+
+    .btn-primary {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 38px;
+      background: var(--clay);
+      color: var(--soil);
+      border: 1px solid var(--clay);
+      transition: background .3s, color .3s;
+      cursor: pointer;
+      display: inline-block
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--clay)
+    }
+
+    .convo-email {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: .15em;
+      color: rgba(232, 221, 210, .3);
+      text-decoration: none;
+      transition: color .3s
+    }
+
+    .convo-email:hover {
+      color: var(--clay)
+    }
+
+    /* FOOTER */
+    footer {
+      background: #251a11;
+      padding: 72px 64px 48px;
+      border-top: 1px solid rgba(196, 168, 130, .18)
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 64px;
+      padding-bottom: 52px;
+      border-bottom: 1px solid rgba(196, 168, 130, .1);
+      margin-bottom: 36px
+    }
+
+    .footer-wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 17px;
+      letter-spacing: .52em;
+      color: var(--sand);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--clay);
+      display: block;
+      margin-bottom: 20px
+    }
+
+    .footer-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(232, 221, 210, .26)
+    }
+
+    .footer-col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 9px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 20px;
+      text-align: end !important;
+    }
+
+    .footer-col a {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      color: rgba(232, 221, 210, .42);
+      text-decoration: none;
+      margin-bottom: 10px;
+      letter-spacing: .05em;
+      transition: color .3s;
+      text-align: end;
+    }
+
+    .footer-col a:hover {
+      color: var(--clay)
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .footer-copy {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: .1em;
+      color: rgba(232, 221, 210, .18)
+    }
+
+    .link-arrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--clay);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: gap .3s, color .3s
+    }
+
+    .link-arrow::after {
+      content: '→';
+      font-family: serif;
+      font-size: 15px
+    }
+
+    .link-arrow:hover {
+      gap: 22px
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .85s ease, transform .85s ease
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity .85s ease, transform .85s ease
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity .85s ease, transform .85s ease
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .d1 {
+      transition-delay: .12s
+    }
+
+    .d2 {
+      transition-delay: .24s
+    }
+
+    .d3 {
+      transition-delay: .36s
+    }
+
+    .d4 {
+      transition-delay: .48s
+    }
+
+    .d5 {
+      transition-delay: .6s
+    }
+
+    @media(max-width:1100px) {
+
+      nav,
+      nav.scrolled {
+        padding-left: 36px;
+        padding-right: 36px
+      }
+
+      .hero-content {
+        padding: 0 36px 60px
+      }
+
+      .opp-content,
+      .programme,
+      .contractors,
+      .convo-inner {
+        padding: 80px 36px
+      }
+
+      .opp-content {
+        padding-top: 40px
+      }
+
+      .opp-content,
+      .prog-header,
+      .prog-two-col,
+      .cont-grid,
+      .convo-header {
+        grid-template-columns: 1fr
+      }
+
+      .onboarding {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .convo-steps {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .opp-stat-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px
+      }
+
+      footer {
+        padding: 64px 36px 40px
+      }
+    }
+
+    @media(max-width:680px) {
+      nav {
+        padding: 16px 20px
+      }
+
+      nav.scrolled {
+        padding: 12px 20px
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      .hero-content {
+        padding: 0 20px 48px
+      }
+
+      .opp-content,
+      .programme,
+      .contractors,
+      .convo-inner {
+        padding: 60px 20px
+      }
+
+      .onboarding {
+        grid-template-columns: 1fr
+      }
+
+      .convo-steps {
+        grid-template-columns: 1fr
+      }
+
+      footer {
+        padding: 48px 20px 36px
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center
+      }
+    }
+
+    /* MOBILE MENU BUTTON */
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      background: none;
+      border: none;
+      color: var(--sand);
+      cursor: pointer;
+    }
+
+    /* MOBILE VIEW */
+    @media (max-width: 680px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(20, 12, 6, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 20px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      background: #251a11;
+      padding: 72px 64px 48px;
+      border-top: 1px solid rgba(196, 168, 130, 0.16);
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 52px;
+      border-bottom: 1px solid rgba(196, 168, 130, 0.1);
+      margin-bottom: 36px;
+    }
+
+    .footer-top>div:first-child {
+      text-align: left;
+      max-width: 220px;
+    }
+
+    .footer-top>div:first-child .logo-img {
+      height: 40px;
+      width: auto;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .footer-top>div:first-child .footer-desc {
+      max-width: 220px;
+    }
+
+    .footer-top>div:nth-child(2),
+    .footer-top>div:nth-child(3) {
+      text-align: center !important;
+    }
+
+    .footer-top>div:nth-child(2) .footer-col-title,
+    .footer-top>div:nth-child(3) .footer-col-title {
+      text-align: center !important;
+    }
+
+    .footer-top>div:nth-child(4) {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(4) .footer-col-title {
+      text-align: center !important;
+    }
+
+    .footer-wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 17px;
+      letter-spacing: 0.52em;
+      color: var(--sand);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--clay);
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .footer-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(232, 221, 210, 0.26);
+    }
+
+    .footer-col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+      color: var(--clay);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .footer-top>div:first-child {
+      text-align: left;
+      max-width: 220px;
+    }
+
+    .footer-top>div:first-child .footer-desc {
+      max-width: 220px;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.84);
+      word-break: normal;
+      hyphens: none;
+      overflow-wrap: normal;
+      white-space: normal;
+      width: 220px;
+    }
+
+    .footer-top>div:first-child {
+      text-align: left;
+      width: 320px;
+      flex-shrink: 0;
+    }
+
+    .footer-top>div:first-child .logo-img {
+      height: 40px;
+      width: auto;
+      object-fit: cover;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .footer-top>div:first-child .footer-desc {
+      width: 400px;
+      max-width: 380px;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.641);
+      word-break: normal;
+      hyphens: none;
+      white-space: normal;
+    }
+
+    .footer-top>div:nth-child(4) {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(4) .footer-col-title {
+      text-align: center !important;
+    }
+
+    .footer-top>div:nth-child(4) {
+      text-align: right;
+    }
+
+    .footer-top>div:nth-child(4) .footer-col-title {
+      text-align: center !important;
+      display: block !important;
+    }
+
+    .footer-top>div:nth-child(4) a {
+      display: block !important;
+      text-align: center;
+    }
+
+    .center {
+      text-align: center !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-Photoroom.png" alt="By Kurators Logo" class="logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="partners.html">Partners</a>
+      <a href="work-with-us.html" class="active">Work With Us</a>
+      <a href="mailto:hello@bykurators.com" class="nav-cta">Get in Touch</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle">
+      ☰
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg"
+      style="background-image:url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1800&q=80&auto=format&fit=crop')">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Design Partners · Trade Partners · Studios</div>
+      <h1>Build Something<br><em>That Travels.</em></h1>
+      <p class="hero-sub">The Middle East and East Africa are building. The demand for considered, design-led spaces is
+        real, growing, and still underserved by the calibre of talent that exists in India and across the world. By
+        Kurators is the bridge — and we are looking for the right people to build it with us.</p>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITY -->
+  <section class="opportunity" id="opportunity">
+    <div class="opp-band">
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1800&q=80&auto=format&fit=crop"
+        alt="Dubai skyline" loading="lazy">
+      <div class="opp-band-overlay"></div>
+      <div class="opp-band-caption">Dubai. The centre of everything.</div>
+    </div>
+    <div class="opp-content">
+      <div class="reveal-left">
+        <div class="section-eyebrow">The Opportunity</div>
+        <h2 class="opp-h">Why This Market.<br>Why Now.</h2>
+        <div class="opp-body">
+          <p>Dubai sits at the centre of one of the most active design markets in the world — a city where quality is
+            expected, the client base is international, and the pipeline is deep. From here, By Kurators works across
+            the wider Middle East and into East Africa: countries building with genuine momentum.</p>
+          <p>For studios based in India, these markets are a natural extension. The design sensibility, the material
+            intelligence, the understanding of warm-climate living — it carries. Studios that have spent decades
+            refining their craft on the subcontinent are often better equipped for this region than the practices
+            already here.</p>
+          <p>For studios based elsewhere in the world, the opportunity is equally real. Clients across the Middle East
+            and East Africa are internationally minded and increasingly discerning.</p>
+          <p
+            style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--clay);line-height:1.55;margin-top:28px">
+            The studios that move here first will define what design means here for the next decade.</p>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="opp-highlight">"For studios based in India, these markets are a natural extension. The design
+          sensibility, the material intelligence — it carries."</div>
+        <div style="margin-top:3px">
+          <div class="opp-stat-grid">
+            <div class="opp-stat">
+              <div class="opp-stat-num">6+</div>
+              <div class="opp-stat-label">Active Markets</div>
+            </div>
+            <div class="opp-stat">
+              <div class="opp-stat-num">20+</div>
+              <div class="opp-stat-label">Years India Design</div>
+            </div>
+            <div class="opp-stat">
+              <div class="opp-stat-num">2</div>
+              <div class="opp-stat-label">Core Regions</div>
+            </div>
+            <div class="opp-stat">
+              <div class="opp-stat-num">∞</div>
+              <div class="opp-stat-label">Right Introductions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMME -->
+  <section class="programme" id="programme">
+    <div class="programme-inner">
+      <div class="prog-header reveal">
+        <div>
+          <div class="section-eyebrow" style="color:var(--clay)">For Design Studios</div>
+          <h2 class="prog-h">The Design Partner<br>Programme</h2>
+        </div>
+        <p class="prog-intro">Being a By Kurators design partner means being part of a curated network that actively
+          places your work in front of the right clients. It is not a listing. It is a relationship, and it is built to
+          produce real commissions.</p>
+      </div>
+
+      <div class="prog-img-bar reveal">
+        <img src="room images/RECEPTION_Interactive LightMix.jpg (1).jpeg" alt="Design partnership" loading="lazy">
+        <div class="prog-img-bar-overlay"></div>
+      </div>
+
+      <div class="prog-two-col">
+        <div class="reveal-left">
+          <div class="prog-col-title">What the Programme Offers</div>
+          <ul class="prog-list">
+            <li>A direct pipeline to serious clients across the UAE, Saudi Arabia, Kenya, Uganda, and the wider region
+            </li>
+            <li>Active, on-the-ground representation by a team that knows the market and knows how to make an
+              introduction land</li>
+            <li>A compelling profile on the By Kurators website, written for design-literate residential and hospitality
+              clients</li>
+            <li>Cross-border project support through our PMC practice — when a commission comes through us, we manage
+              the build on the ground</li>
+            <li>Market intelligence: honest, current, practical knowledge of how projects run in these markets</li>
+            <li>A place on a roster that is selective by design — being here signals something to clients</li>
+            <li>Commercial terms that are transparent, discussed at the outset, and structured to reflect the value of
+              the relationship</li>
+          </ul>
+        </div>
+        <div class="reveal-right">
+          <div class="prog-col-title">What We Look For</div>
+          <ul class="prog-list">
+            <li>A distinctive design philosophy — a clear point of view that makes your work recognisable</li>
+            <li>Consistent delivery — beautiful work that was actually built the way it was designed, on projects that
+              ran with professionalism</li>
+            <li>Cross-border readiness — the process rigour, communication discipline, and cultural fluency to manage
+              client relationships across geographies</li>
+            <li>The right typologies — strength in residential, hospitality, or commercial interiors and architecture
+            </li>
+            <li>Genuine ambition — studios that see this market as a real next chapter, not an experiment</li>
+          </ul>
+          <div
+            style="margin-top:32px;padding:28px 32px;border:1px solid rgba(196,168,130,.18);background:rgba(196,168,130,.04)">
+            <p
+              style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:17px;color:var(--clay);line-height:1.55">
+              Career stage and studio size matter less than the quality of the work and the seriousness of the intent.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="section-eyebrow" style="color:var(--clay)">When You Join</div>
+      </div>
+      <div class="onboarding">
+        <div class="ob-step reveal">
+          <div class="ob-n">01</div>
+          <div class="ob-title">Onboarding Conversation</div>
+          <p class="ob-text">We spend genuine time getting to know your practice — your design approach, your ideal
+            project brief, the kinds of clients you work best with.</p>
+        </div>
+        <div class="ob-step reveal d1">
+          <div class="ob-n">02</div>
+          <div class="ob-title">Profile Goes Live</div>
+          <p class="ob-text">We write and publish your partner profile on the By Kurators Design Partners page. Clear,
+            compelling, positioned for the clients you want to reach.</p>
+        </div>
+        <div class="ob-step reveal d2">
+          <div class="ob-n">03</div>
+          <div class="ob-title">Active Representation</div>
+          <p class="ob-text">We start placing your work in front of relevant clients, including you in curated
+            shortlists, and making introductions when the fit is right.</p>
+        </div>
+        <div class="ob-step reveal d3">
+          <div class="ob-n">04</div>
+          <div class="ob-title">Supported Delivery</div>
+          <p class="ob-text">When a project comes through us, we are available to support the client relationship and,
+            where needed, provide on-the-ground project management.</p>
+        </div>
+        <div class="ob-step reveal d4">
+          <div class="ob-n">05</div>
+          <div class="ob-title">Ongoing Collaboration</div>
+          <p class="ob-text">We stay in regular contact, share market intelligence, and deepen the partnership as your
+            presence in the region grows.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <a href="mailto:hello@bykurators.com?subject=Design Partner Programme Enquiry" class="btn-primary">Express Your
+          Interest</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTRACTORS -->
+  <section class="contractors" id="trade">
+    <div class="contractors-inner">
+      <div class="section-eyebrow reveal">For Trade Partners</div>
+      <div class="cont-grid">
+        <div class="cont-img-col reveal-left">
+          <img src="room images/workstation_Interactive LightMix.jpg.jpeg" alt="Construction site" loading="lazy">
+        </div>
+        <div class="cont-body reveal-right">
+          <h2 class="cont-h">Contractors &amp;<br>Trade Partners</h2>
+          <p class="cont-text">The projects we manage are only as good as the people who build them. By Kurators
+            maintains a trusted network of contractors, specialist vendors, and trade suppliers who work alongside us on
+            the projects we oversee across the region.</p>
+          <p class="cont-text">We are not running a tender panel. We are building a network of people we trust, and
+            trust is earned through the quality of the work and the professionalism of how it gets done.</p>
+          <ul class="cont-who">
+            <li>Fit-out and interior contractors with proven experience on high-specification residential and
+              hospitality projects</li>
+            <li>Specialist trades: bespoke joinery, custom metalwork, stone and tile installation, architectural
+              lighting</li>
+            <li>Materials and finishes suppliers representing distinctive, design-forward products</li>
+            <li>FF&E procurement and logistics professionals with cross-border delivery experience</li>
+            <li>Any trade professional whose work consistently holds up next to exceptional design</li>
+          </ul>
+          <a href="mailto:hello@bykurators.com?subject=Trade Partner Enquiry" class="link-arrow"
+            style="color:var(--bark)">Introduce Your Business</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW THE CONVERSATION STARTS -->
+  <section class="convo" id="contact">
+    <div class="convo-bg"><img
+        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80&auto=format&fit=crop"
+        alt="Interior" loading="lazy"></div>
+    <div class="convo-inner">
+      <div class="convo-header reveal">
+        <div>
+          <div class="section-eyebrow" style="color:var(--clay)">How It Starts</div>
+          <h2 class="convo-h">No Lengthy Forms.<br>Just a Conversation.</h2>
+        </div>
+        <p class="convo-sub">There is no formal application process and no committee. We talk to people. If the work is
+          right and the fit is there, things move quickly. If it's not quite the right moment, we will tell you that too
+          — honestly and without wasting your time.</p>
+      </div>
+
+      <div class="convo-steps">
+        <div class="convo-step reveal">
+          <div class="cs-n">01</div>
+          <div class="cs-t">Send a Short Introduction</div>
+          <p class="cs-d">Use the contact form or write to hello@bykurators.com. Who you are, what you do, and a link to
+            your work. A paragraph is enough to start.</p>
+        </div>
+        <div class="convo-step reveal d1">
+          <div class="cs-n">02</div>
+          <div class="cs-t">We Review and Respond</div>
+          <p class="cs-d">We look at everything. If we think there is a genuine fit, we reach out to arrange a
+            conversation — by call, video, or in person in Dubai.</p>
+        </div>
+        <div class="convo-step reveal d2">
+          <div class="cs-n">03</div>
+          <div class="cs-t">A Real Conversation</div>
+          <p class="cs-d">Not a pitch or a presentation. A genuine exchange about your practice, your ambitions, and
+            what working together could actually look like.</p>
+        </div>
+        <div class="convo-step reveal d3">
+          <div class="cs-n">04</div>
+          <div class="cs-t">We Move Forward</div>
+          <p class="cs-d">If the fit is right on both sides, we agree terms and get started. For design partners:
+            onboarding, profile, active representation.</p>
+        </div>
+      </div>
+
+      <div class="convo-cta reveal">
+        <h2 class="convo-cta-h">Start the Conversation.</h2>
+        <p class="convo-cta-sub">We read everything that comes in, and we respond to the ones that make us want to look
+          closer.</p>
+        <a href="mailto:hello@bykurators.com?subject=Partner Enquiry" class="btn-primary">Get in Touch</a>
+        <a href="mailto:hello@bykurators.com" class="convo-email">hello@bykurators.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a href="#" class="nav-logo">
+            <img src="images/logo-Photoroom 2.png" alt="By Kurators Logo" class="logo-img">
+            <!-- </a>          <span class="footer-tagline">Beautiful spaces, deliberately sourced.</span> -->
+            <p class="footer-desc">Design curation and project management consultancy,  based in Dubai. Curating
+              India's  best design talent and the world's most interesting studios for clients across the
+              Middle East and East Africa.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>          <a href="services.html" class="center">Design Curation</a>
+          <a href="services.html">Project Management</a>
+          <a href="work-with-us.html" class="center">Partner Programme</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div><a href="about.html">About</a><a href="partners.html">Design
+            Partners</a><a href="#">Selected Projects</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div><a href="mailto:hello@bykurators.com">hello@bykurators.com</a><a
+            href="#">bykurators.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 By Kurators. All rights reserved.</p>
+        <p class="footer-copy">Dubai, United Arab Emirates</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target) } }) }, { threshold: .1 });
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => obs.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+  <script src="/cms.js"></script>
+</body>
+
+</html>

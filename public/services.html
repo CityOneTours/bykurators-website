@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Design Curation & Project Management — By Kurators Dubai</title>
+  <meta name="description"
+    content="By Kurators offers design curation — matching clients with exceptional architecture and interior design studios — and end-to-end project management consultancy across the Middle East and East Africa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --soil: #3D2E22;
+      --bark: #6B5744;
+      --clay: #C4A882;
+      --fog: #E8DDD2;
+      --sand: #F2EBE0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--sand);
+      color: var(--soil);
+      overflow-x: hidden
+    }
+
+    .nav-logo .logo-img {
+      height: 40px;
+      /* adjust as needed */
+      width: auto;
+      display: block;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 26px 64px;
+      transition: background .5s, padding .4s, box-shadow .4s
+    }
+
+    nav.scrolled {
+      background: rgba(20, 12, 6, 0.80);
+      backdrop-filter: blur(10px);
+      padding: 16px 64px;
+      box-shadow: 0 1px 0 var(--clay);
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-decoration: none
+    }
+
+    .nav-logo .wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 18px;
+      letter-spacing: .55em;
+      color: var(--sand);
+      text-transform: uppercase;
+      transition: color .5s
+    }
+
+    nav.scrolled .nav-logo .wordmark {
+      color: var(--soil)
+    }
+
+    .nav-logo .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 9px;
+      letter-spacing: .15em;
+      color: var(--clay)
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      align-items: center
+    }
+
+    .nav-links a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: rgba(242, 235, 224, .85);
+      transition: color .3s
+    }
+
+    nav.scrolled .nav-links a {
+      color: white
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--clay)
+    }
+
+    .nav-cta {
+      font-weight: 400 !important;
+      border: 1px solid var(--clay);
+      padding: 8px 20px;
+      transition: background .3s, color .3s !important
+    }
+
+    .nav-cta:hover {
+      background: var(--clay) !important;
+      color: var(--soil) !important
+    }
+
+    nav.scrolled .nav-cta {
+      color: white !important
+    }
+
+    /* HERO */
+    .page-hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      animation: heroZoom 8s ease forwards
+    }
+
+    @keyframes heroZoom {
+      from {
+        transform: scale(1.06)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(20, 12, 6, .82) 0%, rgba(20, 12, 6, .42) 55%, rgba(20, 12, 6, .1) 100%)
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 64px 80px;
+      max-width: 900px
+    }
+
+    .hero-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      opacity: 0;
+      animation: fadeUp .9s .4s forwards
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--clay)
+    }
+
+    .page-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(48px, 6.5vw, 88px);
+      line-height: 1.0;
+      letter-spacing: .04em;
+      color: var(--sand);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp .9s .6s forwards
+    }
+
+    .page-hero h1 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--clay);
+      text-transform: none
+    }
+
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      color: rgba(242, 235, 224, .72);
+      max-width: 680px;
+      opacity: 0;
+      animation: fadeUp .9s .8s forwards
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* OVERVIEW */
+    .overview {
+      background: var(--fog);
+      padding: 80px 64px
+    }
+
+    .overview-inner {
+      max-width: 1280px;
+      margin: 0 auto
+    }
+
+    .overview-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--bark);
+      max-width: 780px;
+      margin-bottom: 52px
+    }
+
+    .overview-cards {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3px
+    }
+
+    .ov-card {
+      padding: 52px 52px 60px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden
+    }
+
+    .ov-card-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0
+    }
+
+    .ov-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: .18;
+      transition: opacity .4s
+    }
+
+    .ov-card:hover .ov-card-img img {
+      opacity: .28
+    }
+
+    .ov-card-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1
+    }
+
+    .ov-card.primary {
+      background: var(--soil)
+    }
+
+    .ov-card.primary .ov-card-overlay {
+      background: rgba(61, 46, 34, .82)
+    }
+
+    .ov-card.secondary {
+      background: var(--fog)
+    }
+
+    .ov-card.secondary .ov-card-overlay {
+      background: rgba(232, 221, 210, .85)
+    }
+
+    .ov-card-inner {
+      position: relative;
+      z-index: 2
+    }
+
+    .ov-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 9px;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      margin-bottom: 20px
+    }
+
+    .ov-card.primary .ov-label {
+      color: var(--clay)
+    }
+
+    .ov-card.secondary .ov-label {
+      color: var(--bark)
+    }
+
+    .ov-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(22px, 2.8vw, 36px);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      line-height: 1.1
+    }
+
+    .ov-card.primary .ov-name {
+      color: var(--sand)
+    }
+
+    .ov-card.secondary .ov-name {
+      color: var(--soil)
+    }
+
+    .ov-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.85;
+      margin-bottom: 36px
+    }
+
+    .ov-card.primary .ov-desc {
+      color: rgba(232, 221, 210, .6)
+    }
+
+    .ov-card.secondary .ov-desc {
+      color: var(--bark)
+    }
+
+    .link-arrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--clay);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: gap .3s, color .3s
+    }
+
+    .link-arrow::after {
+      content: '→';
+      font-family: serif;
+      font-size: 15px
+    }
+
+    .link-arrow:hover {
+      gap: 22px
+    }
+
+    .ov-card.secondary .link-arrow {
+      color: var(--bark)
+    }
+
+    .ov-card.secondary .link-arrow:hover {
+      color: var(--soil)
+    }
+
+    /* SECTION DIVIDER */
+    .section-div {
+      height: 80px;
+      background: linear-gradient(to bottom, var(--soil), var(--soil))
+    }
+
+    /* CURATION FULL */
+    .curation {
+      background: var(--soil);
+      padding: 120px 64px
+    }
+
+    .curation-inner {
+      max-width: 1280px;
+      margin: 0 auto
+    }
+
+    .section-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px
+    }
+
+    .section-eyebrow::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--clay), transparent);
+      max-width: 100px
+    }
+
+    .service-section-h {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(32px, 4vw, 58px);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 60px;
+      line-height: 1.1
+    }
+
+    .curation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 80px
+    }
+
+    .curation-img {
+      overflow: hidden;
+      position: relative
+    }
+
+    .curation-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      object-fit: cover;
+      display: block;
+      transition: transform .8s ease
+    }
+
+    .curation-img:hover img {
+      transform: scale(1.04)
+    }
+
+    .curation-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(61, 46, 34, .6) 100%)
+    }
+
+    .service-body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13.5px;
+      line-height: 1.95;
+      color: rgba(232, 221, 210, .62)
+    }
+
+    .service-body p+p {
+      margin-top: 18px
+    }
+
+    .service-body h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin: 36px 0 16px
+    }
+
+    /* PROCESS STEPS */
+    .process-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin-top: 60px
+    }
+
+    .process-step {
+      border: 1px solid rgba(196, 168, 130, .15);
+      padding: 40px 40px 44px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .4s, background .4s
+    }
+
+    .process-step:hover {
+      border-color: rgba(196, 168, 130, .4);
+      background: rgba(196, 168, 130, .04)
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 52px;
+      color: rgba(196, 168, 130, .12);
+      position: absolute;
+      top: 16px;
+      right: 28px;
+      line-height: 1
+    }
+
+    .step-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 14px
+    }
+
+    .step-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.85;
+      color: rgba(232, 221, 210, .58)
+    }
+
+    /* WHO ITS FOR */
+    .who-for-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0
+    }
+
+    .who-for-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(196, 168, 130, .15);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.75;
+      color: rgba(232, 221, 210, .62)
+    }
+
+    .who-for-list li::before {
+      content: '—';
+      color: var(--clay);
+      flex-shrink: 0;
+      margin-top: 1px
+    }
+
+    .who-for-list li:first-child {
+      border-top: 1px solid rgba(196, 168, 130, .15)
+    }
+
+    /* PMC */
+    .pmc {
+      background: var(--fog);
+      padding: 120px 64px
+    }
+
+    .pmc-inner {
+      max-width: 1280px;
+      margin: 0 auto
+    }
+
+    .pmc-h {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(32px, 4vw, 58px);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--soil);
+      margin-bottom: 60px;
+      line-height: 1.1
+    }
+
+    .pmc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 80px
+    }
+
+    .pmc-img {
+      overflow: hidden;
+      position: relative
+    }
+
+    .pmc-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      object-fit: contain;
+      display: block;
+      transition: transform .8s ease
+    }
+
+    .pmc-img:hover img {
+      transform: scale(1.04)
+    }
+
+    .pmc-body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13.5px;
+      line-height: 1.95;
+      color: var(--bark)
+    }
+
+    .pmc-body p+p {
+      margin-top: 18px
+    }
+
+    .pmc-body h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(196, 168, 130, .3)
+    }
+
+    .pmc-body ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0
+    }
+
+    .pmc-body ul li {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--bark);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(196, 168, 130, .2);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px
+    }
+
+    .pmc-body ul li::before {
+      content: '·';
+      color: var(--clay);
+      flex-shrink: 0;
+      font-size: 18px;
+      line-height: 1.3
+    }
+
+    /* PMC PROCESS */
+    .pmc-process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3px;
+      margin-top: 60px
+    }
+
+    .pmc-step {
+      background: rgba(255, 255, 255, .6);
+      border: 1px solid rgba(196, 168, 130, .3);
+      padding: 36px 32px 40px;
+      transition: background .3s, border-color .3s
+    }
+
+    .pmc-step:hover {
+      background: white;
+      border-color: rgba(196, 168, 130, .6)
+    }
+
+    .pmc-step-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 44px;
+      color: var(--clay);
+      margin-bottom: 16px;
+      line-height: 1
+    }
+
+    .pmc-step-t {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--soil);
+      margin-bottom: 12px
+    }
+
+    .pmc-step-d {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--bark)
+    }
+
+    /* COMBINED CLOSE */
+    .combined-close {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      display: flex;
+      align-items: center
+    }
+
+    .cc-bg {
+      position: absolute;
+      inset: 0
+    }
+
+    .cc-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .cc-bg-ov {
+      position: absolute;
+      inset: 0;
+      background: rgba(25, 14, 7, .85)
+    }
+
+    .cc-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 100px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center
+    }
+
+
+    .cc-h {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(32px, 4vw, 56px);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 20px;
+      line-height: 1.05
+    }
+
+    .cc-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 19px;
+      line-height: 1.65;
+      color: rgba(232, 221, 210, .58);
+      margin-bottom: 8px
+    }
+
+    .cc-note {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 1.8;
+      color: rgba(232, 221, 210, .35);
+      margin-top: 24px
+    }
+
+    .cc-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px
+    }
+
+    .btn-primary {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 38px;
+      background: var(--clay);
+      color: var(--soil);
+      border: 1px solid var(--clay);
+      transition: background .3s, color .3s;
+      cursor: pointer;
+      display: inline-block
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--clay)
+    }
+
+    .btn-ghost {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 38px;
+      background: transparent;
+      color: rgba(242, 235, 224, .85);
+      border: 1px solid rgba(242, 235, 224, .35);
+      transition: border-color .3s, color .3s;
+      cursor: pointer;
+      display: inline-block
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--sand);
+      color: var(--sand)
+    }
+
+    /* FOOTER */
+    footer {
+      background: #251a11;
+      padding: 72px 64px 48px;
+      border-top: 1px solid rgba(196, 168, 130, .18)
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 64px;
+      padding-bottom: 52px;
+      border-bottom: 1px solid rgba(196, 168, 130, .1);
+      margin-bottom: 36px
+    }
+
+    .footer-wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 17px;
+      letter-spacing: .52em;
+      color: var(--sand);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--clay);
+      display: block;
+      margin-bottom: 20px
+    }
+
+    .footer-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(232, 221, 210, .26)
+    }
+
+    .footer-col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 9px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 20px;
+      text-align: end;
+    }
+
+    .footer-col a {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      color: rgba(232, 221, 210, .42);
+      text-decoration: none;
+      margin-bottom: 10px;
+      letter-spacing: .05em;
+      transition: color .3s;
+      text-align: end;
+    }
+
+    .footer-col a:hover {
+      color: var(--clay)
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .footer-copy {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: .1em;
+      color: rgba(232, 221, 210, .18)
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .85s ease, transform .85s ease
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity .85s ease, transform .85s ease
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity .85s ease, transform .85s ease
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .d1 {
+      transition-delay: .1s
+    }
+
+    .d2 {
+      transition-delay: .22s
+    }
+
+    .d3 {
+      transition-delay: .34s
+    }
+
+    .d4 {
+      transition-delay: .46s
+    }
+
+    @media(max-width:1100px) {
+
+      nav,
+      nav.scrolled {
+        padding-left: 36px;
+        padding-right: 36px
+      }
+
+      .hero-content {
+        padding: 0 36px 60px
+      }
+
+      .overview,
+      .curation,
+      .pmc {
+        padding: 80px 36px
+      }
+
+      .overview-cards {
+        grid-template-columns: 1fr
+      }
+
+      .curation-grid,
+      .pmc-grid {
+        grid-template-columns: 1fr
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr
+      }
+
+      .pmc-process {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .cc-inner {
+        grid-template-columns: 1fr;
+        padding: 80px 36px
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px
+      }
+
+      footer {
+        padding: 64px 36px 40px
+      }
+    }
+
+    @media(max-width:680px) {
+      nav {
+        padding: 16px 20px
+      }
+
+      nav.scrolled {
+        padding: 12px 20px
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      .hero-content {
+        padding: 0 20px 48px
+      }
+
+      .overview,
+      .curation,
+      .pmc {
+        padding: 60px 20px
+      }
+
+      .pmc-process {
+        grid-template-columns: 1fr
+      }
+
+      .cc-inner {
+        padding: 60px 20px
+      }
+
+      footer {
+        padding: 48px 20px 36px
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center
+      }
+    }
+
+
+    /* MOBILE MENU BUTTON */
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      background: none;
+      border: none;
+      color: var(--sand);
+      cursor: pointer;
+    }
+
+    /* MOBILE VIEW */
+    @media (max-width: 680px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(20, 12, 6, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 20px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+ /* FOOTER */
+    footer {
+      background: #251a11;
+      padding: 72px 64px 48px;
+      border-top: 1px solid rgba(196, 168, 130, 0.16);
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 52px;
+      border-bottom: 1px solid rgba(196, 168, 130, 0.1);
+      margin-bottom: 36px;
+    }
+
+    .footer-top>div:first-child {
+      text-align: left;
+      max-width: 220px;
+    }
+
+    .footer-top>div:first-child .logo-img {
+      height: 40px;
+      width: auto;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .footer-top>div:first-child .footer-desc {
+      max-width: 220px;
+    }
+
+    .footer-top>div:nth-child(2),
+    .footer-top>div:nth-child(3) {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(2) .footer-col-title,
+    .footer-top>div:nth-child(3) .footer-col-title {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(4) {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(4) .footer-col-title {
+      text-align: center;
+    }
+
+    .footer-wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 17px;
+      letter-spacing: 0.52em;
+      color: var(--sand);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--clay);
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .footer-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(232, 221, 210, 0.26);
+    }
+
+    .footer-col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+      color: var(--clay);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .footer-top>div:first-child {
+      text-align: left;
+      max-width: 220px;
+    }
+
+    .footer-top>div:first-child .footer-desc {
+      max-width: 220px;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.84);
+      word-break: normal;
+      hyphens: none;
+      overflow-wrap: normal;
+      white-space: normal;
+      width: 220px;
+    }
+
+    .footer-top>div:first-child {
+      text-align: left;
+      width: 320px;
+      flex-shrink: 0;
+    }
+
+    .footer-top>div:first-child .logo-img {
+      height: 40px;
+      width: auto;
+      object-fit: cover;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .footer-top>div:first-child .footer-desc {
+      width: 400px;
+      max-width: 380px;
+      font-size: 11px;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.641);
+      word-break: normal;
+      hyphens: none;
+      white-space: normal;
+    }
+
+    .footer-top>div:nth-child(4) {
+      text-align: center;
+    }
+
+    .footer-top>div:nth-child(4) .footer-col-title {
+      text-align: center;
+    }
+    .footer-top > div:nth-child(4) {
+  text-align: right;
+}
+
+.footer-top > div:nth-child(4) .footer-col-title {
+  text-align: center !important;
+  display: block !important;
+}
+
+.footer-top > div:nth-child(4) a {
+  display: block !important;
+  text-align: center;
+}
+.center{
+  text-align: center !important;
+}
+  </style>
+</head>
+
+<body>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-Photoroom.png" alt="By Kurators Logo" class="logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="partners.html">Partners</a>
+      <a href="work-with-us.html">Work With Us</a>
+      <a href="mailto:hello@bykurators.com" class="nav-cta">Get in Touch</a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">
+      ☰
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image:url('room images/RECEPTION_Interactive LightMix.jpg.jpeg')">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Design Curation · Project Management</div>
+      <h1>It Starts with<br><em>the Right Studio.</em></h1>
+      <p class="hero-sub">Finding exceptional design talent is what we do best. And once the right creative relationship
+        is in place, we stay close to the project — through our project management practice — to make sure what was
+        imagined actually gets built.</p>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="overview">
+    <div class="overview-inner">
+      <div class="section-eyebrow reveal">What We Do</div>
+      <p class="overview-text reveal d1">Our core practice is design curation — the careful, considered work of matching
+        clients with the right architecture or interior design studio. Alongside that, we offer project management
+        consultancy for clients who want independent oversight through the build. The two services work well together,
+        and can also be engaged independently.</p>
+      <div class="overview-cards">
+        <div class="ov-card primary reveal-left">
+          <div class="ov-card-img"><img
+              src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?w=900&q=80&auto=format&fit=crop"
+              alt="Design Curation" loading="lazy"></div>
+          <div class="ov-card-overlay"></div>
+          <div class="ov-card-inner">
+            <div class="ov-label">Our Primary Service</div>
+            <h2 class="ov-name">Design Curation</h2>
+            <p class="ov-desc">We find the right design studio for your project — from a global roster anchored in
+              India's design tradition — and manage the relationship from introduction through to delivery.</p>
+            <a href="#curation" class="link-arrow">Read More</a>
+          </div>
+        </div>
+        <div class="ov-card secondary reveal-right">
+          <div class="ov-card-img"><img
+              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format&fit=crop"
+              alt="Project Management" loading="lazy"></div>
+          <div class="ov-card-overlay"></div>
+          <div class="ov-card-inner">
+            <div class="ov-label">Supporting Service</div>
+            <h2 class="ov-name">Project Management Consultancy</h2>
+            <p class="ov-desc">Independent end-to-end oversight for interior and architectural projects — budget,
+              timeline, vendor management, and site supervision.</p>
+            <a href="#pmc" class="link-arrow" style="color:var(--bark)">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-div"></div>
+
+  <!-- DESIGN CURATION FULL -->
+  <section class="curation" id="curation">
+    <div class="curation-inner">
+      <div class="section-eyebrow reveal" style="color:var(--clay)">Service 01</div>
+      <h2 class="service-section-h reveal d1">Design Curation</h2>
+
+      <div class="curation-grid">
+        <div class="curation-img reveal-left">
+          <img src="room images/Reception-v1.jpg.jpeg" alt="Design curation" loading="lazy">
+          <div class="curation-img-overlay"></div>
+        </div>
+        <div class="service-body reveal-right">
+          <p>The search for the right design studio is one of the most consequential decisions in any project. Get it
+            right, and everything that follows has a foundation. Get it wrong, and no amount of budget or good intention
+            fixes it later.</p>
+          <p>This is the work By Kurators was built to do. We maintain a carefully curated roster of architecture and
+            interior design studios — practices we know well, trust completely, and match with genuine care. Our clients
+            don't wade through directories or send cold enquiries. They come to us, and we make the right introduction.
+          </p>
+          <p
+            style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--clay);line-height:1.5;margin:28px 0">
+            We don't send a list. We make a recommendation — and we stand behind it.</p>
+          <h3>A Roster Built on Discernment</h3>
+          <p>Our starting point is India — a design world we know intimately, with a talent pool that is deep, diverse,
+            and increasingly global in its reach. Alongside our India-based partners, we work with exceptional studios
+            from around the world: practices chosen not for their geography but for their quality, their character, and
+            their ability to deliver across borders.</p>
+          <p>Every studio on our roster has been assessed on three things: the quality of the work, the integrity of the
+            process, and the fit with the kinds of clients and projects we serve.</p>
+          <h3>Who This Service Is For</h3>
+          <ul class="who-for-list">
+            <li>Residential homeowners planning a new build, full renovation, or interior overhaul</li>
+            <li>Hospitality groups and developers who need design partners with cross-regional fluency</li>
+            <li>Clients who have been disappointed by generic results and want studios with a genuine point of view</li>
+            <li>Anyone who values fit — aesthetically, temperamentally, and practically — as much as portfolio
+              credentials</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="section-eyebrow" style="color:var(--clay)">The Process</div>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="step-num">01</div>
+          <div class="step-title">Tell us about your project</div>
+          <p class="step-text">A conversation — in person, by phone, or over email. We want to understand the space, the
+            brief, the budget range, and the timeline. And we want to understand you: your aesthetic instincts and what
+            a good outcome looks like.</p>
+        </div>
+        <div class="process-step reveal d1">
+          <div class="step-num">02</div>
+          <div class="step-title">We shortlist and recommend</div>
+          <p class="step-text">Based on that conversation, we identify one to three studios from our roster whose work,
+            working style, and project experience genuinely suit your brief. We don't overwhelm — we make a considered
+            recommendation and explain our thinking.</p>
+        </div>
+        <div class="process-step reveal d2">
+          <div class="step-num">03</div>
+          <div class="step-title">We make the introduction</div>
+          <p class="step-text">We introduce you to the studio directly — not a cold handover, but a warm and
+            well-prepared connection. We brief the studio on your project and expectations, and we make sure the first
+            meeting is a good one.</p>
+        </div>
+        <div class="process-step reveal d3">
+          <div class="step-num">04</div>
+          <div class="step-title">We stay close</div>
+          <p class="step-text">Once the relationship is established, we remain available to both parties. If something
+            needs to be clarified, renegotiated, or redirected, we are there to help. The introduction is the beginning,
+            not the end of our involvement.</p>
+        </div>
+      </div>
+      <div class="reveal" style="margin-top:48px">
+        <a href="mailto:hello@bykurators.com" class="btn-primary"
+          style="background:var(--clay);color:var(--soil);border-color:var(--clay)">Get in Touch to Discuss Your
+          Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PMC FULL -->
+  <section class="pmc" id="pmc">
+    <div class="pmc-inner">
+      <div class="section-eyebrow reveal" style="color:var(--clay)">Service 02</div>
+      <h2 class="pmc-h reveal d1">Project Management<br>Consultancy</h2>
+
+      <div class="pmc-grid">
+        <div class="pmc-body reveal-left">
+          <p>The right studio is the foundation. But a great design can still fall short if the project itself isn't
+            managed well. Our project management consultancy practice exists to close that gap — sitting between client
+            and creative team as a trusted, independent voice that protects the design intent and keeps the process
+            honest.</p>
+          <p
+            style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--clay);line-height:1.5;margin:28px 0">
+            We don't just manage the process. We protect what the project was supposed to be.</p>
+          <h3>Pre-Construction</h3>
+          <ul>
+            <li>Brief development and scope definition</li>
+            <li>Budget setting and cost benchmarking</li>
+            <li>Contractor and vendor selection and due diligence</li>
+            <li>Programme and milestone planning</li>
+          </ul>
+          <h3>Construction & Implementation</h3>
+          <ul>
+            <li>Site supervision and quality control</li>
+            <li>Progress tracking against programme and budget</li>
+            <li>Variation management and change control</li>
+            <li>Issue resolution and decision escalation</li>
+          </ul>
+          <h3>Completion & Handover</h3>
+          <ul>
+            <li>Snagging and defect management</li>
+            <li>Final inspections and sign-off coordination</li>
+            <li>Handover documentation and warranties</li>
+          </ul>
+        </div>
+        <div class="pmc-img reveal-right">
+          <img src="room images/11141.png" alt="Project management on site" loading="lazy">
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="section-eyebrow" style="color:var(--clay)">How We Work</div>
+      </div>
+      <div class="pmc-process">
+        <div class="pmc-step reveal">
+          <div class="pmc-step-n">01</div>
+          <div class="pmc-step-t">Project Initiation</div>
+          <p class="pmc-step-d">We establish scope, budget parameters, key stakeholders, and success criteria. We review
+            existing documentation and identify gaps or risks early.</p>
+        </div>
+        <div class="pmc-step reveal d1">
+          <div class="pmc-step-n">02</div>
+          <div class="pmc-step-t">Procurement & Planning</div>
+          <p class="pmc-step-d">We lead or advise on selection of contractors and key suppliers. We build the project
+            programme and establish the reporting framework.</p>
+        </div>
+        <div class="pmc-step reveal d2">
+          <div class="pmc-step-n">03</div>
+          <div class="pmc-step-t">Delivery Oversight</div>
+          <p class="pmc-step-d">We are present and accountable throughout the build — on site, in coordination meetings,
+            and in ongoing communication with the client.</p>
+        </div>
+        <div class="pmc-step reveal d3">
+          <div class="pmc-step-n">04</div>
+          <div class="pmc-step-t">Completion & Close-Out</div>
+          <p class="pmc-step-d">We manage the final stages with the same rigour as the build: snagging, defect
+            resolution, handover documentation, and a structured close-out.</p>
+        </div>
+      </div>
+      <div class="reveal" style="margin-top:48px">
+        <a href="mailto:hello@bykurators.com" class="btn-primary"
+          style="background:var(--soil);color:var(--sand);border-color:var(--soil)">Get in Touch to Discuss Your
+          Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMBINED CLOSE -->
+  <section class="combined-close">
+    <div class="cc-bg">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=80&auto=format&fit=crop"
+        alt="Luxury interior" loading="lazy">
+      <div class="cc-bg-ov"></div>
+    </div>
+    <div class="cc-inner">
+      <div class="cc-left reveal-left">
+        <div class="section-eyebrow" style="color:var(--clay)">Start Here</div>
+        <h2 class="cc-h">Start with the Studio.<br>We'll Handle the Rest.</h2>
+        <p class="cc-sub">Most clients come to us because they need the right design partner and don't know where to
+          find one. That's exactly where we start.</p>
+        <p class="cc-note">We don't push scope. If a lighter-touch engagement is what your project needs, that's what
+          we'll recommend.</p>
+      </div>
+      <div class="cc-right reveal-right">
+        <a href="mailto:hello@bykurators.com" class="btn-primary">Get in Touch</a>
+        <a href="partners.html" class="btn-ghost">Meet Our Design Partners</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a href="#" class="nav-logo">
+            <img src="images/logo-Photoroom 2.png" alt="By Kurators Logo" class="logo-img">
+            <!-- </a>          <span class="footer-tagline">Beautiful spaces, deliberately sourced.</span> -->
+            <p class="footer-desc">Design curation and project management consultancy,  based in Dubai. Curating
+              India's  best design talent and the world's   most interesting studios for clients across the
+              Middle East and East Africa.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>          <a href="services.html" class="center">Design Curation</a>
+          <a href="services.html">Project Management</a>
+          <a href="work-with-us.html" class="center">Partner Programme</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div><a href="about.html">About</a><a href="partners.html">Design
+            Partners</a><a href="#">Selected Projects</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div><a href="mailto:hello@bykurators.com">hello@bykurators.com</a><a
+            href="#">bykurators.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 By Kurators. All rights reserved.</p>
+        <p class="footer-copy">Dubai, United Arab Emirates</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target) } }) }, { threshold: .12 });
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => obs.observe(el));
+
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+  <script src="/cms.js"></script>
+</body>
+
+</html>
