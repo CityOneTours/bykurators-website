@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aum Architects | By Kurators</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --soil: #3D2E22;
+      --clay: #C4A882;
+      --fog: #E8DDD2;
+      --sand: #F2EBE0;
+      --dark: #111009;
+      --dark2: #1a1511;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--dark);
+      color: var(--sand);
+      overflow-x: hidden
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 400;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      transition: background .4s, padding .3s;
+    }
+
+    nav.sc {
+      background: rgba(17, 16, 9, .92);
+      backdrop-filter: blur(14px);
+      padding: 14px 48px;
+      border-bottom: 1px solid rgba(196, 168, 130, .1);
+    }
+
+    .nav-logo img {
+      height: 34px;
+      width: auto;
+      display: block
+    }
+
+    .nav-r {
+      display: flex;
+      align-items: center;
+      gap: 24px
+    }
+
+    .nav-back {
+      font-size: 9px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(242, 235, 224, .38);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: color .25s;
+    }
+
+    .nav-back::before {
+      content: '←'
+    }
+
+    .nav-back:hover {
+      color: var(--clay)
+    }
+
+    .nav-enq {
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      background: var(--clay);
+      color: var(--soil);
+      padding: 8px 18px;
+      text-decoration: none;
+      transition: opacity .25s;
+    }
+
+    .nav-enq:hover {
+      opacity: .82
+    }
+
+    /* PAGE TOP SPACER */
+    .top-spacer {
+      height: 80px
+    }
+
+    /* FILTER BAR */
+    .fbar {
+      padding: 24px 48px 20px;
+      display: flex;
+      gap: 3px;
+      flex-wrap: wrap;
+    }
+
+    .ftab {
+      font-size: 8px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      border: 1px solid rgba(196, 168, 130, .15);
+      color: rgba(232, 221, 210, .32);
+      background: transparent;
+      padding: 7px 16px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      transition: all .2s;
+    }
+
+    .ftab.on,
+    .ftab:hover {
+      background: var(--clay);
+      color: var(--soil);
+      border-color: var(--clay)
+    }
+
+    /* MASONRY */
+    .gwrap {
+      padding: 0 48px 72px
+    }
+
+    .masonry {
+      column-count: 3;
+      column-gap: 5px;
+    }
+
+    .m-item {
+      break-inside: avoid;
+      margin-bottom: 5px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      display: block;
+      background: #1a1511;
+    }
+
+    .m-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .9s cubic-bezier(.25, .46, .45, .94);
+      vertical-align: bottom;
+    }
+
+    .m-item:hover img {
+      transform: scale(1.06)
+    }
+
+    .m-cap {
+      position: absolute;
+      inset: 0;
+      background: rgba(17, 16, 9, 0);
+      transition: background .3s;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .m-item:hover .m-cap {
+      background: rgba(17, 16, 9, .52)
+    }
+
+    .m-cap-body {
+      padding: 14px 16px;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: opacity .28s, transform .28s;
+    }
+
+    .m-item:hover .m-cap-body {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .m-cap-name {
+      font-size: 11px;
+      letter-spacing: .09em;
+      color: var(--sand);
+      margin-bottom: 2px
+    }
+
+    .m-cap-type {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 11px;
+      color: var(--clay)
+    }
+
+    .m-item.hide {
+      display: none
+    }
+
+    /* LIGHTBOX */
+    .lb {
+      position: fixed;
+      inset: 0;
+      z-index: 600;
+      background: rgba(8, 6, 3, .97);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lb.open {
+      display: flex
+    }
+
+    .lb-img {
+      max-width: 88vw;
+      max-height: 86vh;
+      object-fit: contain;
+      display: block;
+      animation: lbi .18s ease;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @keyframes lbi {
+      from {
+        opacity: 0;
+        transform: scale(.96)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .lb-x {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      font-size: 24px;
+      color: rgba(242, 235, 224, .3);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      transition: color .2s;
+    }
+
+    .lb-x:hover {
+      color: var(--clay)
+    }
+
+    .lb-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, .04);
+      border: none;
+      color: rgba(242, 235, 224, .3);
+      font-size: 17px;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s, color .2s;
+    }
+
+    .lb-nav:hover {
+      background: rgba(196, 168, 130, .1);
+      color: var(--clay)
+    }
+
+    .lb-prev {
+      left: 16px
+    }
+
+    .lb-next {
+      right: 16px
+    }
+
+    .lb-bot {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .lb-cap {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: rgba(232, 221, 210, .28);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .lb-cnt {
+      font-size: 8px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(232, 221, 210, .16);
+      pointer-events: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0a0806;
+      padding: 32px 48px 26px;
+      border-top: 1px solid rgba(196, 168, 130, .07);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .f-brand {
+      font-weight: 200;
+      font-size: 12px;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: rgba(242, 235, 224, .22);
+    }
+
+    .f-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap
+    }
+
+    .f-links a {
+      font-size: 8px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(232, 221, 210, .16);
+      text-decoration: none;
+      transition: color .3s;
+    }
+
+    .f-links a:hover {
+      color: var(--clay)
+    }
+
+    .f-copy {
+      font-size: 8px;
+      letter-spacing: .1em;
+      color: rgba(232, 221, 210, .1)
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .masonry {
+        column-count: 2
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      nav,
+      nav.sc {
+        padding-left: 22px;
+        padding-right: 22px
+      }
+
+      .fbar,
+      .gwrap {
+        padding-left: 22px;
+        padding-right: 22px
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px 22px
+      }
+    }
+
+    @media (max-width: 540px) {
+      .masonry {
+        column-count: 1
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-Photoroom.png" alt="By Kurators">
+    </a>
+    <div class="nav-r">
+      <a href="partners.html" class="nav-back">All Partners</a>
+      <a href="mailto:hello@bykurators.com?subject=Aum Architects Enquiry" class="nav-enq">Enquire</a>
+    </div>
+  </nav>
+
+  <div class="top-spacer"></div>
+
+  <!-- FILTER -->
+  <div class="fbar">
+    <button class="ftab on" onclick="doFilter(this,'all')">All</button>
+    <button class="ftab" onclick="doFilter(this,'residential')">Residential</button>
+    <button class="ftab" onclick="doFilter(this,'commercial')">Commercial</button>
+    <button class="ftab" onclick="doFilter(this,'hospitality')">Architecture</button>
+    <!-- <button class="ftab" onclick="doFilter(this,'detail')">Details</button> -->
+  </div>
+
+  <!-- MASONRY GALLERY -->
+  <div class="gwrap">
+    <div class="masonry" id="grid">
+
+      <div class="m-item" data-cat="residential" onclick="lb(0)">
+        <img src="arum images/61.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Private Villa</div>
+            <div class="m-cap-type">Residential · Mumbai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(1)">
+        <img src="arum images/_PAB3029-HDR.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Living Room</div>
+            <div class="m-cap-type">Residential · Worli</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(2)">
+        <img src="arum images/_PAB3485-HDR.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Boutique Resort</div>
+            <div class="m-cap-type">Hospitality · Goa</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(3)">
+        <img src="arum images/_PAB3510-HDR.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Corporate Office</div>
+            <div class="m-cap-type">Commercial · Pune</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(4)">
+        <img src="arum images/_PAB8248-HDR.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Material Study</div>
+            <div class="m-cap-type">Detail · Stone & Brass</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(5)">
+        <img src="arum images/AUM_Edenique_3X5A8328-HDR_1575x1050.png" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
+          loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Hill Villa</div>
+            <div class="m-cap-type">Residential · Lonavala</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(6)">
+        <img src="arum images/AUM_Edenique_3X5A8337_700x1050.png" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
+          loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Hotel Lobby</div>
+            <div class="m-cap-type">Hospitality · Mumbai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(7)">
+        <img src="arum images/AUM_Edenique_3X5A8344_1575x1050.png" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
+          loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Joinery Detail</div>
+            <div class="m-cap-type">Detail · Teak & Plaster</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(8)">
+        <img src="arum images/ELR-WSA_4695-Edit.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg  '" loading="lazy"
+          alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Design Showroom</div>
+            <div class="m-cap-type">Commercial · Delhi</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(9)">
+        <img src="images/aum-10.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Family Residence</div>
+            <div class="m-cap-type">Residential · Bangalore</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(10)">
+        <img src="arum images/ELR-WSA_6932-Edit.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
+          alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Spa & Wellness</div>
+            <div class="m-cap-type">Hospitality · Alibaug</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(11)">
+        <img src="arum images/ELR-WSA_7085-Edit.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
+          alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Facade Study</div>
+            <div class="m-cap-type">Detail · Exposed Concrete</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(12)">
+        <img src="arum images/ELR-WSA_7873-Edit.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
+          alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Sea-View Apartment</div>
+            <div class="m-cap-type">Residential · Bandra</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(13)">
+        <img src="arum images/ES333_FS.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Creative Studio</div>
+            <div class="m-cap-type">Residential · Mumbai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-item" data-cat="residential" onclick="lb(14)">
+        <img src="images/aum-15.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Residential · Juhu</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="residential" onclick="lb(14)">
+        <img src="arum images/living balcony.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
+          alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Residential · Juhu</div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+        <img src="arum images/Architecture/01_11 - Photo.jpeg" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
+          loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Architecture · Juhu</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+        <img src="arum images/Architecture/13.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
+          alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Architecture · Juhu</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+        <img src="arum images/Architecture/17_Final.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
+          loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Architecture · Juhu</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+        <img src="arum images/Architecture/3.jpeg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
+          alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Architecture · Juhu</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+        <img src="arum images/Architecture/6. STANDEE.png" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
+          loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Architecture · Juhu</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+        <img src="arum images/Architecture/Exact Render 31267-10-01-37-0001.jpeg"
+          onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Architecture · Juhu</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+        <img src="arum images/Architecture/Exact Render 40610-09-50-40-0001.jpeg"
+          onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Architecture · Juhu</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+        <img src="arum images/Architecture/View 1.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
+          alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Architecture · Juhu</div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+        <img src="arum images/commercial/10 copy.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Commercial · Mumbai</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+        <img src="arum images/commercial/11 copy.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Commercial · Mumbai</div>
+          </div>
+        </div>
+      </div>
+            <div class="m-item" data-cat="commercial" onclick="lb(14)">
+        <img src="arum images/commercial/13_1(1).jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Commercial · Mumbai</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+        <img src="arum images/commercial/5 copy.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Commercial · Mumbai</div>
+          </div>
+        </div>
+      </div>
+
+
+                  <div class="m-item" data-cat="commercial" onclick="lb(14)">
+        <img src="arum images/commercial/BO8A0798_FS.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Commercial · Mumbai</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+        <img src="arum images/commercial/BO8A0906_FS.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Commercial · Mumbai</div>
+          </div>
+        </div>
+      </div>
+
+
+      
+                  <div class="m-item" data-cat="commercial" onclick="lb(14)">
+        <img src="arum images/commercial/BO8A1522-EditLR.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Commercial · Mumbai</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+        <img src="arum images/commercial/MD Cabin 2.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Commercial · Mumbai</div>
+          </div>
+        </div>
+      </div>
+
+                        <div class="m-item" data-cat="commercial" onclick="lb(14)">
+        <img src="arum images/commercial/workstation3.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Commercial · Mumbai</div>
+          </div>
+        </div>
+      </div>
+      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+        <img src="arum images/commercial/workstation5.jpg" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+        <div class="m-cap">
+          <div class="m-cap-body">
+            <div class="m-cap-name">Master Bedroom</div>
+            <div class="m-cap-type">Commercial · Mumbai</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COPY THIS BLOCK TO ADD MORE IMAGES
+  <div class="m-item" data-cat="residential" onclick="lb(15)">
+    <img src="images/aum-16.jpg" loading="lazy" alt="">
+    <div class="m-cap"><div class="m-cap-body"><div class="m-cap-name">Project Name</div><div class="m-cap-type">Type · City</div></div></div>
+  </div>
+  -->
+
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lb" id="lb-el" onclick="if(event.target===this)closeLB()">
+    <button class="lb-x" onclick="closeLB()">×</button>
+    <button class="lb-nav lb-prev" onclick="navLB(-1)">&#8592;</button>
+    <img class="lb-img" id="lb-img" src="" alt="">
+    <button class="lb-nav lb-next" onclick="navLB(1)">&#8594;</button>
+    <div class="lb-bot">
+      <div class="lb-cap" id="lb-cap"></div>
+      <div class="lb-cnt" id="lb-cnt"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="f-brand">By Kurators</div>
+    <div class="f-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="partners.html">All Partners</a>
+      <a href="work-with-us.html">Work With Us</a>
+    </div>
+    <div class="f-copy">© 2025 By Kurators · Dubai, UAE</div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 40));
+
+    function doFilter(btn, cat) {
+      document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      document.querySelectorAll('.m-item').forEach(item => {
+        item.classList.toggle('hide', cat !== 'all' && item.dataset.cat !== cat);
+      });
+    }
+
+    let visible = [], cur = 0;
+
+    function getVisible() {
+      return Array.from(document.querySelectorAll('.m-item:not(.hide)'));
+    }
+
+    function lb(globalIdx) {
+      visible = getVisible();
+      const allItems = Array.from(document.querySelectorAll('.m-item'));
+      cur = visible.indexOf(allItems[globalIdx]);
+      if (cur < 0) cur = 0;
+      show();
+    }
+
+    function show() {
+      const item = visible[cur];
+      if (!item) return;
+      const img = item.querySelector('img');
+      const name = item.querySelector('.m-cap-name')?.textContent || '';
+      const type = item.querySelector('.m-cap-type')?.textContent || '';
+      document.getElementById('lb-img').src = img.src;
+      document.getElementById('lb-cap').textContent = name + (type ? '  ·  ' + type : '');
+      document.getElementById('lb-cnt').textContent = (cur + 1) + ' / ' + visible.length;
+      document.getElementById('lb-el').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLB() {
+      document.getElementById('lb-el').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function navLB(d) {
+      cur = (cur + d + visible.length) % visible.length;
+      show();
+    }
+
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('lb-el').classList.contains('open')) return;
+      if (e.key === 'Escape') closeLB();
+      if (e.key === 'ArrowRight') navLB(1);
+      if (e.key === 'ArrowLeft') navLB(-1);
+    });
+
+    let tx = 0;
+    document.getElementById('lb-el').addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
+    document.getElementById('lb-el').addEventListener('touchend', e => {
+      const d = tx - e.changedTouches[0].clientX;
+      if (Math.abs(d) > 44) navLB(d > 0 ? 1 : -1);
+    });
+  </script>
+</body>
+
+</html>
