@@ -1934,144 +1934,159 @@
 
 
     }
+
     /* WHATSAPP FLOATING BUTTON */
-.wa-float {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  animation: waPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  animation-delay: 2s;
-}
+    .wa-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      animation: waPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+      animation-delay: 2s;
+    }
 
-@keyframes waPop {
-  0% { opacity: 0; transform: scale(0.6); }
-  100% { opacity: 1; transform: scale(1); }
-}
+    @keyframes waPop {
+      0% {
+        opacity: 0;
+        transform: scale(0.6);
+      }
 
-.wa-tooltip {
-  background: #1a1a1a;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  padding: 8px 14px;
-  border-radius: 4px;
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateX(6px);
-  transition: opacity 0.25s, transform 0.25s;
-  pointer-events: none;
-}
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-.wa-tooltip::after {
-  content: '';
-  position: absolute;
-  right: -6px;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 6px solid transparent;
-  border-left-color: #1a1a1a;
-  border-right: 0;
-}
+    .wa-tooltip {
+      background: #1a1a1a;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      padding: 8px 14px;
+      border-radius: 4px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(6px);
+      transition: opacity 0.25s, transform 0.25s;
+      pointer-events: none;
+    }
 
-.wa-float:hover .wa-tooltip {
-  opacity: 1;
-  transform: translateX(0);
-}
+    .wa-tooltip::after {
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: #1a1a1a;
+      border-right: 0;
+    }
 
-.wa-btn {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: #25D366;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-  transition: transform 0.25s, box-shadow 0.25s;
-  flex-shrink: 0;
-}
+    .wa-float:hover .wa-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
-.wa-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
-}
+    .wa-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: transform 0.25s, box-shadow 0.25s;
+      flex-shrink: 0;
+    }
 
-.wa-btn svg {
-  width: 28px;
-  height: 28px;
-  fill: #fff;
-}
+    .wa-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+    }
 
-/* Pulse ring */
-.wa-btn::before {
-  content: '';
-  position: absolute;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: rgba(37, 211, 102, 0.3);
-  animation: waPulse 2.5s ease-out infinite;
-}
+    .wa-btn svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+    }
 
-@keyframes waPulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  100% { transform: scale(1.8); opacity: 0; }
-}
+    /* Pulse ring */
+    .wa-btn::before {
+      content: '';
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(37, 211, 102, 0.3);
+      animation: waPulse 2.5s ease-out infinite;
+    }
 
-/* WHATSAPP BUTTON IN CONTACT SECTION */
-.btn-whatsapp {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 15px 38px;
-  background: #25D366;
-  color: #fff;
-  border: 1px solid #25D366;
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
+    @keyframes waPulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
 
-.btn-whatsapp:hover {
-  background: transparent;
-  color: #25D366;
-  border-color: #25D366;
-}
+      100% {
+        transform: scale(1.8);
+        opacity: 0;
+      }
+    }
 
-.btn-whatsapp svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-  flex-shrink: 0;
-}
+    /* WHATSAPP BUTTON IN CONTACT SECTION */
+    .btn-whatsapp {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 38px;
+      background: #25D366;
+      color: #fff;
+      border: 1px solid #25D366;
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-@media (max-width: 680px) {
-  .wa-float {
-    bottom: 20px;
-    right: 20px;
-  }
+    .btn-whatsapp:hover {
+      background: transparent;
+      color: #25D366;
+      border-color: #25D366;
+    }
 
-  .wa-btn {
-    width: 52px;
-    height: 52px;
-  }
+    .btn-whatsapp svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
 
-  .wa-tooltip {
-    display: none;
-  }
-}
+    @media (max-width: 680px) {
+      .wa-float {
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .wa-btn {
+        width: 52px;
+        height: 52px;
+      }
+
+      .wa-tooltip {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -2099,7 +2114,7 @@
   <section class="hero" id="hero">
 
     <div class="slide active">
-      <div class="slide-bg" style="background-image:url('room images/GUEST BEDROOM 01.jpg.jpeg')">
+      <div class="slide-bg" style="background-image:url('room images/GUEST BEDROOM 01.jpg.webp')">
       </div>
       <div class="slide-overlay"></div>
       <div class="slide-content">
@@ -2115,7 +2130,7 @@
     </div>
 
     <div class="slide">
-      <div class="slide-bg" style="background-image:url('images/handcrafted-wooden-decorative-sculptures (1).jpg')">
+      <div class="slide-bg" style="background-image:url('images/handcrafted-wooden-decorative-sculptures (1).webp')">
       </div>
       <div class="slide-overlay"></div>
       <div class="slide-content">
@@ -2131,7 +2146,7 @@
     </div>
 
     <div class="slide">
-      <div class="slide-bg" style="background-image:url('room images/ceo_Interactive LightMix.jpg.jpeg')">
+      <div class="slide-bg" style="background-image:url('room images/ceo_Interactive LightMix.jpg.webp')">
       </div>
       <div class="slide-overlay"></div>
       <div class="slide-content">
@@ -2171,7 +2186,7 @@
   <!-- BRAND STATEMENT -->
   <section class="brand-statement" id="about">
     <div class="brand-img reveal">
-      <img src="room images/ceo_Interactive LightMix.jpg.jpeg" alt="Curated interior" loading="lazy">
+      <img src="room images/ceo_Interactive LightMix.jpg.webp" alt="Curated interior" loading="lazy">
       <div class="brand-img-caption">Considered spaces. Deliberate choices.</div>
     </div>
     <div class="brand-text">
@@ -2204,7 +2219,7 @@
       <div class="services-grid">
         <div class="service-card reveal">
           <div class="service-img">
-            <img src="room images/RECEPTION_Interactive LightMix.jpg.jpeg" alt="Design Curation" loading="lazy">
+            <img src="room images/RECEPTION_Interactive LightMix.jpg.webp" alt="Design Curation" loading="lazy">
             <div class="service-img-overlay"></div>
           </div>
           <span class="service-num">01</span>
@@ -2222,7 +2237,7 @@
         </div>
         <div class="service-card reveal reveal-delay-2">
           <div class="service-img">
-            <img src="room images/workstation_Interactive LightMix.jpg.jpeg" alt="Project Management" loading="lazy">
+            <img src="room images/workstation_Interactive LightMix.jpg.webp" alt="Project Management" loading="lazy">
             <div class="service-img-overlay"></div>
           </div>
           <span class="service-num">02</span>
@@ -2244,7 +2259,7 @@
   <!-- HOW IT WORKS -->
   <section class="how-it-works" id="process">
     <div class="hiw-band">
-      <img src="room images/Reception-v1.jpg.jpeg" alt="Design studio process" loading="lazy">
+      <img src="room images/Reception-v1.jpg.webp" alt="Design studio process" loading="lazy">
       <div class="hiw-band-overlay"></div>
       <div class="hiw-band-caption">Every project starts with a conversation.</div>
     </div>
@@ -2302,20 +2317,20 @@
       </div>
       <div class="partner-grid reveal">
         <div class="partner-card anchor" onclick="window.location.href='aum-architects.html'" style="cursor:pointer;">
-  <div class="partner-card-img">
-    <img src="room images/meeting_Interactive LightMix.jpg.jpeg" alt="Aum Architects" loading="lazy">
-    <div class="partner-card-img-ov"></div>
-  </div>
-  <div class="partner-body">
-    <span class="partner-label">Anchor Partner</span>
-    <div class="partner-name">Aum Architects</div>
-    <div class="partner-city">Mumbai, India</div>
-    <span class="partner-tag">Architecture · Interiors</span>
-  </div>
-</div>
-        <div class="partner-card">
           <div class="partner-card-img">
-            <img src="room images/MD CABIN_2.jpg.jpeg" alt="Studio India" loading="lazy">
+            <img src="room images/meeting_Interactive LightMix.jpg.webp" alt="Aum Architects" loading="lazy">
+            <div class="partner-card-img-ov"></div>
+          </div>
+          <div class="partner-body">
+            <span class="partner-label">Anchor Partner</span>
+            <div class="partner-name">Aum Architects</div>
+            <div class="partner-city">Mumbai, India</div>
+            <span class="partner-tag">Architecture · Interiors</span>
+          </div>
+        </div>
+        <div class="partner-card" onclick="window.location.href='studio-osmosis.html'" style="cursor:pointer;">
+          <div class="partner-card-img">
+            <img src="room images/MD CABIN_2.jpg.webp" alt="Studio India" loading="lazy">
             <div class="partner-card-img-ov"></div>
           </div>
           <div class="partner-body">
@@ -2361,7 +2376,7 @@
       <div class="project-grid reveal">
         <div class="proj-card">
           <div class="proj-inner">
-            <img src="room images/GUEST BEDROOM 01.jpg.jpeg" alt="Private Villa Dubai" loading="lazy">
+            <img src="room images/GUEST BEDROOM 01.jpg.webp" alt="Private Villa Dubai" loading="lazy">
             <div class="proj-overlay"></div>
             <div class="proj-line"></div>
             <div class="proj-info">
@@ -2373,7 +2388,7 @@
         </div>
         <div class="proj-card">
           <div class="proj-inner">
-            <img src="room images/meeting_Interactive LightMix.jpg (1).jpeg" alt="Boutique Hotel Nairobi"
+            <img src="room images/meeting_Interactive LightMix.jpg (1).webp" alt="Boutique Hotel Nairobi"
               loading="lazy">
             <div class="proj-overlay"></div>
             <div class="proj-line"></div>
@@ -2386,7 +2401,7 @@
         </div>
         <div class="proj-card">
           <div class="proj-inner">
-            <img src="images/outdoor-deck.jpg" alt="Penthouse Abu Dhabi" loading="lazy">
+            <img src="images/outdoor-deck.webp" alt="Penthouse Abu Dhabi" loading="lazy">
             <div class="proj-overlay"></div>
             <div class="proj-line"></div>
             <div class="proj-info">
@@ -2398,7 +2413,7 @@
         </div>
         <div class="proj-card">
           <div class="proj-inner">
-            <img src="room images/BAR-1.jpg.jpeg" alt="Safari Lodge Tanzania" loading="lazy">
+            <img src="room images/BAR-1.jpg.webp" alt="Safari Lodge Tanzania" loading="lazy">
             <div class="proj-overlay"></div>
             <div class="proj-line"></div>
             <div class="proj-info">
@@ -2413,19 +2428,22 @@
           style="color:rgba(232,221,210,0.55)">View All Projects</a></div> -->
     </div>
   </section>
-<!-- WHATSAPP FLOATING BUTTON -->
-<a class="wa-float" href="https://wa.me/971569989961?text=Hi%20Khushi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20By%20Kurators." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <span class="wa-tooltip">Chat with us</span>
-  <div class="wa-btn">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </div>
-</a>
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a class="wa-float"
+    href="https://wa.me/971569989961?text=Hi%20Khushi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20By%20Kurators."
+    target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <span class="wa-tooltip">Chat with us</span>
+    <div class="wa-btn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </div>
+  </a>
   <!-- DESIGNERS -->
   <section class="designers" id="designers">
     <div class="designers-band">
-      <img src="images/interior-decoration-inspired-by-mexican-folklore.jpg" alt="Architecture studio" loading="lazy">
+      <img src="images/interior-decoration-inspired-by-mexican-folklore.webp" alt="Architecture studio" loading="lazy">
       <div class="designers-band-text">
         <div class="section-eyebrow reveal" style="color:var(--clay)">For Studios &amp; Practices</div>
         <h2 class="designers-band-h reveal reveal-delay-1">Designers<br>&amp; Studios</h2>
@@ -2450,7 +2468,7 @@
           </p>
           <span class="panel-attr">— By Kurators</span>
           <div class="panel-img">
-            <img src="room images/GUEST BEDROOM 02 TOILET.jpg.jpeg" alt="Studio blueprints" loading="lazy">
+            <img src="room images/GUEST BEDROOM 02 TOILET.jpg.webp" alt="Studio blueprints" loading="lazy">
           </div>
         </div>
       </div>
