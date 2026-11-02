@@ -423,20 +423,20 @@
 
   <div class="top-spacer"></div>
 
-  <!-- FILTER -->
+  <!-- FILTER (data-filter value = URL hash) -->
   <div class="fbar">
-    <button class="ftab on" onclick="doFilter(this,'all')">All</button>
-    <button class="ftab" onclick="doFilter(this,'residential')">Residential</button>
-    <button class="ftab" onclick="doFilter(this,'commercial')">Commercial</button>
-    <button class="ftab" onclick="doFilter(this,'hospitality')">Architecture</button>
-    <!-- <button class="ftab" onclick="doFilter(this,'detail')">Details</button> -->
+    <button class="ftab on" data-filter="all">All</button>
+    <button class="ftab" data-filter="residential">Residential</button>
+    <button class="ftab" data-filter="commercial">Commercial</button>
+    <button class="ftab" data-filter="architecture">Architecture</button>
   </div>
 
   <!-- MASONRY GALLERY -->
   <div class="gwrap">
     <div class="masonry" id="grid">
 
-      <div class="m-item" data-cat="residential" onclick="lb(0)">
+      <!-- ================= RESIDENTIAL ================= -->
+      <div class="m-item" data-cat="residential">
         <img src="arum images/61.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -446,7 +446,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(1)">
+      <div class="m-item" data-cat="residential">
         <img src="arum images/_PAB3029-HDR.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -456,7 +456,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(2)">
+      <div class="m-item" data-cat="residential">
         <img src="arum images/_PAB3485-HDR.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -466,7 +466,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(3)">
+      <div class="m-item" data-cat="residential">
         <img src="arum images/_PAB3510-HDR.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -476,7 +476,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(4)">
+      <div class="m-item" data-cat="residential">
         <img src="arum images/_PAB8248-HDR.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -486,7 +486,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(5)">
+      <div class="m-item" data-cat="residential">
         <img src="arum images/AUM_Edenique_3X5A8328-HDR_1575x1050.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
           loading="lazy" alt="">
         <div class="m-cap">
@@ -497,7 +497,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(6)">
+      <div class="m-item" data-cat="residential">
         <img src="arum images/AUM_Edenique_3X5A8337_700x1050.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
           loading="lazy" alt="">
         <div class="m-cap">
@@ -508,7 +508,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(7)">
+      <div class="m-item" data-cat="residential">
         <img src="arum images/AUM_Edenique_3X5A8344_1575x1050.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
           loading="lazy" alt="">
         <div class="m-cap">
@@ -519,8 +519,8 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(8)">
-        <img src="arum images/ELR-WSA_4695-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg  '" loading="lazy"
+      <div class="m-item" data-cat="residential">
+        <img src="arum images/ELR-WSA_4695-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
           alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -530,7 +530,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(9)">
+      <div class="m-item" data-cat="residential">
         <img src="images/aum-10.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -540,7 +540,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(10)">
+      <div class="m-item" data-cat="residential">
         <img src="arum images/ELR-WSA_6932-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
           alt="">
         <div class="m-cap">
@@ -551,7 +551,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(11)">
+      <div class="m-item" data-cat="residential">
         <img src="arum images/ELR-WSA_7085-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
           alt="">
         <div class="m-cap">
@@ -562,7 +562,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(12)">
+      <div class="m-item" data-cat="residential">
         <img src="arum images/ELR-WSA_7873-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
           alt="">
         <div class="m-cap">
@@ -573,7 +573,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(13)">
+      <div class="m-item" data-cat="residential">
         <img src="arum images/ES333_FS.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -583,7 +583,7 @@
         </div>
       </div>
 
-      <div class="m-item" data-cat="residential" onclick="lb(14)">
+      <div class="m-item" data-cat="residential">
         <img src="images/aum-15.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -592,7 +592,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="residential" onclick="lb(14)">
+
+      <div class="m-item" data-cat="residential">
         <img src="arum images/living balcony.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
           alt="">
         <div class="m-cap">
@@ -603,12 +604,8 @@
         </div>
       </div>
 
-
-
-
-
-
-      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+      <!-- ================= ARCHITECTURE ================= -->
+      <div class="m-item" data-cat="architecture">
         <img src="arum images/Architecture/01_11 - Photo.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
           loading="lazy" alt="">
         <div class="m-cap">
@@ -618,7 +615,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+
+      <div class="m-item" data-cat="architecture">
         <img src="arum images/Architecture/13.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
           alt="">
         <div class="m-cap">
@@ -628,7 +626,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+
+      <div class="m-item" data-cat="architecture">
         <img src="arum images/Architecture/17_Final.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
           loading="lazy" alt="">
         <div class="m-cap">
@@ -638,7 +637,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+
+      <div class="m-item" data-cat="architecture">
         <img src="arum images/Architecture/3.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
           alt="">
         <div class="m-cap">
@@ -648,7 +648,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+
+      <div class="m-item" data-cat="architecture">
         <img src="arum images/Architecture/6. STANDEE.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
           loading="lazy" alt="">
         <div class="m-cap">
@@ -658,7 +659,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+
+      <div class="m-item" data-cat="architecture">
         <img src="arum images/Architecture/Exact Render 31267-10-01-37-0001.webp"
           onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
@@ -668,7 +670,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+
+      <div class="m-item" data-cat="architecture">
         <img src="arum images/Architecture/Exact Render 40610-09-50-40-0001.webp"
           onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
@@ -678,7 +681,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+
+      <div class="m-item" data-cat="architecture">
         <img src="arum images/Architecture/View 1.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy"
           alt="">
         <div class="m-cap">
@@ -689,9 +693,8 @@
         </div>
       </div>
 
-
-
-      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+      <!-- ================= COMMERCIAL ================= -->
+      <div class="m-item" data-cat="commercial">
         <img src="arum images/commercial/10 copy.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -700,7 +703,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+
+      <div class="m-item" data-cat="commercial">
         <img src="arum images/commercial/11 copy.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -709,7 +713,8 @@
           </div>
         </div>
       </div>
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
+
+      <div class="m-item" data-cat="commercial">
         <img src="arum images/commercial/13_1(1).webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -718,7 +723,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+
+      <div class="m-item" data-cat="commercial">
         <img src="arum images/commercial/5 copy.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -728,8 +734,7 @@
         </div>
       </div>
 
-
-                  <div class="m-item" data-cat="commercial" onclick="lb(14)">
+      <div class="m-item" data-cat="commercial">
         <img src="arum images/commercial/BO8A0798_FS.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -738,7 +743,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+
+      <div class="m-item" data-cat="commercial">
         <img src="arum images/commercial/BO8A0906_FS.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -748,9 +754,7 @@
         </div>
       </div>
 
-
-      
-                  <div class="m-item" data-cat="commercial" onclick="lb(14)">
+      <div class="m-item" data-cat="commercial">
         <img src="arum images/commercial/BO8A1522-EditLR.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -759,7 +763,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+
+      <div class="m-item" data-cat="commercial">
         <img src="arum images/commercial/MD Cabin 2.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -769,7 +774,7 @@
         </div>
       </div>
 
-                        <div class="m-item" data-cat="commercial" onclick="lb(14)">
+      <div class="m-item" data-cat="commercial">
         <img src="arum images/commercial/workstation3.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -778,7 +783,8 @@
           </div>
         </div>
       </div>
-      <div class="m-item" data-cat="commercial" onclick="lb(14)">
+
+      <div class="m-item" data-cat="commercial">
         <img src="arum images/commercial/workstation5.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
         <div class="m-cap">
           <div class="m-cap-body">
@@ -789,11 +795,12 @@
       </div>
 
       <!-- COPY THIS BLOCK TO ADD MORE IMAGES
-  <div class="m-item" data-cat="residential" onclick="lb(15)">
-    <img src="images/aum-16.jpg" loading="lazy" alt="">
-    <div class="m-cap"><div class="m-cap-body"><div class="m-cap-name">Project Name</div><div class="m-cap-type">Type · City</div></div></div>
-  </div>
-  -->
+           (data-cat must be: residential / commercial / architecture)
+      <div class="m-item" data-cat="residential">
+        <img src="images/aum-16.jpg" loading="lazy" alt="">
+        <div class="m-cap"><div class="m-cap-body"><div class="m-cap-name">Project Name</div><div class="m-cap-type">Type · City</div></div></div>
+      </div>
+      -->
 
     </div>
   </div>
@@ -824,30 +831,67 @@
   </footer>
 
   <script>
+    /* ---------- NAV SCROLL ---------- */
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 40));
 
-    function doFilter(btn, cat) {
-      document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
-      btn.classList.add('on');
-      document.querySelectorAll('.m-item').forEach(item => {
+    /* ---------- FILTER + URL ---------- */
+    const VALID = ['all', 'residential', 'commercial', 'architecture'];
+    const tabs = document.querySelectorAll('.ftab');
+    const items = document.querySelectorAll('.m-item');
+
+    // Show/hide items and highlight the right tab (does NOT touch the URL)
+    function applyFilter(cat) {
+      if (!VALID.includes(cat)) cat = 'all';
+
+      tabs.forEach(t => t.classList.toggle('on', t.dataset.filter === cat));
+      items.forEach(item => {
         item.classList.toggle('hide', cat !== 'all' && item.dataset.cat !== cat);
       });
     }
 
+    // Read the category from the URL hash  (page.html#residential)
+    function catFromURL() {
+      return location.hash.replace('#', '').toLowerCase() || 'all';
+    }
+
+    // Tab click -> update URL
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const cat = tab.dataset.filter;
+        if (cat === 'all') {
+          // clean URL (no hash) for "All"
+          history.pushState(null, '', location.pathname + location.search);
+          applyFilter('all');
+        } else {
+          location.hash = cat;   // triggers hashchange -> applyFilter
+        }
+      });
+    });
+
+    // Back / Forward buttons or manual hash change
+    window.addEventListener('hashchange', () => applyFilter(catFromURL()));
+    window.addEventListener('popstate', () => applyFilter(catFromURL()));
+
+    // On first load, apply whatever category is in the URL
+    applyFilter(catFromURL());
+
+    /* ---------- LIGHTBOX ---------- */
     let visible = [], cur = 0;
 
     function getVisible() {
       return Array.from(document.querySelectorAll('.m-item:not(.hide)'));
     }
 
-    function lb(globalIdx) {
-      visible = getVisible();
-      const allItems = Array.from(document.querySelectorAll('.m-item'));
-      cur = visible.indexOf(allItems[globalIdx]);
-      if (cur < 0) cur = 0;
-      show();
-    }
+    // Open the lightbox for the clicked item
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        visible = getVisible();
+        cur = visible.indexOf(item);
+        if (cur < 0) cur = 0;
+        show();
+      });
+    });
 
     function show() {
       const item = visible[cur];
@@ -855,7 +899,7 @@
       const img = item.querySelector('img');
       const name = item.querySelector('.m-cap-name')?.textContent || '';
       const type = item.querySelector('.m-cap-type')?.textContent || '';
-      document.getElementById('lb-img').src = img.src;
+      document.getElementById('lb-img').src = img.currentSrc || img.src;
       document.getElementById('lb-cap').textContent = name + (type ? '  ·  ' + type : '');
       document.getElementById('lb-cnt').textContent = (cur + 1) + ' / ' + visible.length;
       document.getElementById('lb-el').classList.add('open');

@@ -907,12 +907,13 @@
             </div>
 
             <!--
-        FILTER BUTTONS — each data-filter value must exactly match the
-        data-category value on the .gallery-item elements below.
+        FILTER BUTTONS — each data-filter value is used as the URL hash
+        (page.html#boutique) and must exactly match the data-category value
+        on the .gallery-item elements below.
       -->
             <div class="filter-bar reveal">
                 <button class="filter-btn active" data-filter="all">All Work</button>
-                <button class="filter-btn" data-filter="residence">Boutique</button>
+                <button class="filter-btn" data-filter="boutique">Boutique</button>
                 <button class="filter-btn" data-filter="collaboration-hub">Collaboration Hub</button>
                 <button class="filter-btn" data-filter="family-residence">Family Residence</button>
                 <button class="filter-btn" data-filter="lart-de-vivre">L'art de Vivre</button>
@@ -924,37 +925,36 @@
         Each item needs a data-category matching one filter button's
         data-filter value above. Add as many items per category as you
         like — duplicate a block, change src/alt/caption, set data-category.
-        Drop your real photos into "images/".
       -->
             <div class="gallery-grid" id="galleryGrid">
 
-                <!-- Residence -->
-                <div class="gallery-item" data-category="residence" onclick="openLightbox(this)">
-                    <img src="julia-sakhno images/Boutique (2)/0.webp" alt="Residence project" loading="lazy">
+                <!-- Boutique -->
+                <div class="gallery-item" data-category="boutique" onclick="openLightbox(this)">
+                    <img src="julia-sakhno images/Boutique (2)/0.webp" alt="Boutique project" loading="lazy">
                     <div class="gallery-item-overlay"></div>
-                    <div class="gallery-item-caption">Residence</div>
+                    <div class="gallery-item-caption">Boutique</div>
                 </div>
-                <div class="gallery-item" data-category="residence" onclick="openLightbox(this)">
-                    <img src="julia-sakhno images/Boutique (2)/2.webp" alt="Residence project" loading="lazy">
+                <div class="gallery-item" data-category="boutique" onclick="openLightbox(this)">
+                    <img src="julia-sakhno images/Boutique (2)/2.webp" alt="Boutique project" loading="lazy">
                     <div class="gallery-item-overlay"></div>
-                    <div class="gallery-item-caption">Residence</div>
+                    <div class="gallery-item-caption">Boutique</div>
                 </div>
-                <div class="gallery-item" data-category="residence" onclick="openLightbox(this)">
-                    <img src="julia-sakhno images/Boutique (2)/IMG_35A9433303E1-1.webp" alt="Residence project"
+                <div class="gallery-item" data-category="boutique" onclick="openLightbox(this)">
+                    <img src="julia-sakhno images/Boutique (2)/IMG_35A9433303E1-1.webp" alt="Boutique project"
                         loading="lazy">
                     <div class="gallery-item-overlay"></div>
-                    <div class="gallery-item-caption">Residence</div>
+                    <div class="gallery-item-caption">Boutique</div>
                 </div>
-                <div class="gallery-item" data-category="residence" onclick="openLightbox(this)">
-                    <img src="julia-sakhno images/Boutique (2)/IMG_5602.webp" alt="Residence project" loading="lazy">
+                <div class="gallery-item" data-category="boutique" onclick="openLightbox(this)">
+                    <img src="julia-sakhno images/Boutique (2)/IMG_5602.webp" alt="Boutique project" loading="lazy">
                     <div class="gallery-item-overlay"></div>
-                    <div class="gallery-item-caption">Residence</div>
+                    <div class="gallery-item-caption">Boutique</div>
                 </div>
-                <div class="gallery-item" data-category="residence" onclick="openLightbox(this)">
-                    <img src="julia-sakhno images/Boutique (2)/IMG_850B0F15CFBF-1.webp" alt="Residence project"
+                <div class="gallery-item" data-category="boutique" onclick="openLightbox(this)">
+                    <img src="julia-sakhno images/Boutique (2)/IMG_850B0F15CFBF-1.webp" alt="Boutique project"
                         loading="lazy">
                     <div class="gallery-item-overlay"></div>
-                    <div class="gallery-item-caption">Residence</div>
+                    <div class="gallery-item-caption">Boutique</div>
                 </div>
 
 
@@ -1101,11 +1101,6 @@
                 </div>
 
 
-
-
-
-
-
                 <!-- L'art de Vivre -->
                 <div class="gallery-item" data-category="lart-de-vivre" onclick="openLightbox(this)">
                     <img src="julia-sakhno images/l art devv/7U2A5189.webp" alt="L'art de Vivre project" loading="lazy">
@@ -1182,10 +1177,6 @@
                 </div>
 
 
-
-
-
-
                 <!-- Wellness Residence -->
                 <div class="gallery-item" data-category="wellness-residence" onclick="openLightbox(this)">
                     <img src="julia-sakhno images/Wellness residence (2)/1 2.webp" alt="Wellness Residence project"
@@ -1235,8 +1226,6 @@
                     <div class="gallery-item-overlay"></div>
                     <div class="gallery-item-caption">Wellness Residence</div>
                 </div>
-
-
                 <div class="gallery-item" data-category="wellness-residence" onclick="openLightbox(this)">
                     <img src="julia-sakhno images/Wellness residence (2)/IMB_1199-HDR.webp"
                         alt="Wellness Residence project" loading="lazy">
@@ -1290,7 +1279,7 @@
     </section>
 
     <a class="wa-float"
-        href="https://wa.me/971569989961?text=Hi%20Khushi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20Juli%20Atelier."
+        href="https://wa.me/971527708998?text=Hi%20Khushi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20Juli%20Atelier."
         target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
         <div class="wa-btn">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1339,6 +1328,7 @@
     </footer>
 
     <script>
+        /* ---------- REVEAL ON SCROLL ---------- */
         const obs = new IntersectionObserver(entries => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
         }, { threshold: 0.12 });
@@ -1352,33 +1342,69 @@
         style.textContent = '.reveal.visible{opacity:1 !important;transform:translateY(0) !important;}';
         document.head.appendChild(style);
 
+        /* ---------- MOBILE MENU ---------- */
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.querySelector('.nav-links');
         if (menuToggle) {
             menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
         }
 
+        /* ---------- FILTER + URL ---------- */
+        const VALID = ['all', 'boutique', 'collaboration-hub', 'family-residence', 'lart-de-vivre', 'wellness-residence'];
         const filterBtns = document.querySelectorAll('.filter-btn');
         const galleryItems = document.querySelectorAll('.gallery-item');
         const galleryEmpty = document.getElementById('galleryEmpty');
 
+        // Show/hide items and highlight the right tab (does NOT touch the URL)
+        function applyFilter(cat) {
+            if (!VALID.includes(cat)) cat = 'all';
+            let visibleCount = 0;
+
+            filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === cat));
+
+            galleryItems.forEach(item => {
+                const match = cat === 'all' || item.dataset.category === cat;
+                item.classList.toggle('hidden', !match);
+                if (match) visibleCount++;
+            });
+
+            galleryEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // Read the category from the URL hash (page.html#boutique)
+        function catFromURL() {
+            return location.hash.replace('#', '').toLowerCase() || 'all';
+        }
+
+        // Tab click -> update URL
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
-                let visibleCount = 0;
-
-                galleryItems.forEach(item => {
-                    const match = filter === 'all' || item.dataset.category === filter;
-                    item.classList.toggle('hidden', !match);
-                    if (match) visibleCount++;
-                });
-
-                galleryEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
+                const cat = btn.dataset.filter;
+                if (cat === 'all') {
+                    // clean URL (no hash) for "All Work"
+                    history.pushState(null, '', location.pathname + location.search);
+                    applyFilter('all');
+                } else {
+                    location.hash = cat;   // triggers hashchange -> applyFilter
+                }
             });
         });
 
+        // Back / Forward buttons or manual hash change
+        window.addEventListener('hashchange', () => applyFilter(catFromURL()));
+        window.addEventListener('popstate', () => applyFilter(catFromURL()));
+
+        // On first load, apply whatever category is in the URL
+        applyFilter(catFromURL());
+
+        // If the page was opened with a category link, jump down to the gallery
+        if (location.hash && VALID.includes(catFromURL()) && catFromURL() !== 'all') {
+            window.addEventListener('load', () => {
+                document.getElementById('gallery').scrollIntoView();
+            });
+        }
+
+        /* ---------- LIGHTBOX ---------- */
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         let currentItem = null;

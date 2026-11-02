@@ -423,20 +423,20 @@
 
     <div class="top-spacer"></div>
 
-    <!-- FILTER -->
+    <!-- FILTER (data-filter value = URL hash) -->
     <div class="fbar">
-        <button class="ftab on" onclick="doFilter(this,'all')">All</button>
-        <button class="ftab" onclick="doFilter(this,'residential')">Residential</button>
-        <button class="ftab" onclick="doFilter(this,'commercial')">Commercial</button>
-        <button class="ftab" onclick="doFilter(this,'hospitality')">Hospitality</button>
-        <!-- <button class="ftab" onclick="doFilter(this,'detail')">Details</button> -->
+        <button class="ftab on" data-filter="all">All</button>
+        <button class="ftab" data-filter="residential">Residential</button>
+        <button class="ftab" data-filter="commercial">Commercial</button>
+        <button class="ftab" data-filter="hospitality">Hospitality</button>
     </div>
 
     <!-- MASONRY GALLERY -->
     <div class="gwrap">
         <div class="masonry" id="grid">
 
-            <div class="m-item" data-cat="residential" onclick="lb(0)">
+            <!-- ================= RESIDENTIAL ================= -->
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/1.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -447,7 +447,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(1)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/12.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -458,7 +458,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(2)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/14.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -469,7 +469,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(3)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/16.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -480,7 +480,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(4)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/17.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -491,7 +491,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(5)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/1C.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -502,7 +502,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(6)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/22.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -513,7 +513,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(7)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/23.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -524,8 +524,8 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(8)">
-                <img src="studio-osmosis-images/residential/24.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg  '"
+            <div class="m-item" data-cat="residential">
+                <img src="studio-osmosis-images/residential/24.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
@@ -535,7 +535,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(9)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/32.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -546,7 +546,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(10)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/33.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -557,7 +557,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(11)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/34.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -568,7 +568,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(12)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/37.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -579,7 +579,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(13)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/4.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -590,7 +590,7 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/41.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -600,7 +600,8 @@
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
+
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/5.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -610,7 +611,8 @@
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
+
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/54.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -620,7 +622,8 @@
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
+
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/55.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -630,7 +633,8 @@
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
+
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/6.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -640,7 +644,8 @@
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
+
+            <div class="m-item" data-cat="residential">
                 <img src="studio-osmosis-images/residential/8.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -650,69 +655,10 @@
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
-                <img src="studio-osmosis-images/residential/ELR-WSA_3361-Edit-2.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Residential · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
-                <img src="studio-osmosis-images/residential/ELR-WSA_3387-Edit-2.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Residential · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
-                <img src="studio-osmosis-images/residential/ELR-WSA_3513-Edit-2.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Residential · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
-                <img src="studio-osmosis-images/residential/ELR-WSA_3563-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Residential · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
-                <img src="studio-osmosis-images/residential/ELR-WSA_3375-Edit-2.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Residential · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
-                <img src="studio-osmosis-images/residential/ELR-WSA_3970-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Residential · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="residential" onclick="lb(14)">
-                <img src="studio-osmosis-images/residential/ELR-WSA_5107-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+
+            <div class="m-item" data-cat="residential">
+                <img src="studio-osmosis-images/residential/ELR-WSA_3361-Edit-2.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
@@ -721,169 +667,242 @@
                 </div>
             </div>
 
-
-
-
-
-
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0007-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+            <div class="m-item" data-cat="residential">
+                <img src="studio-osmosis-images/residential/ELR-WSA_3387-Edit-2.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
+                        <div class="m-cap-type">Residential · Juhu</div>
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0080-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+
+            <div class="m-item" data-cat="residential">
+                <img src="studio-osmosis-images/residential/ELR-WSA_3513-Edit-2.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
+                        <div class="m-cap-type">Residential · Juhu</div>
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0108-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+
+            <div class="m-item" data-cat="residential">
+                <img src="studio-osmosis-images/residential/ELR-WSA_3563-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
+                        <div class="m-cap-type">Residential · Juhu</div>
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0161-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+
+            <div class="m-item" data-cat="residential">
+                <img src="studio-osmosis-images/residential/ELR-WSA_3375-Edit-2.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
+                        <div class="m-cap-type">Residential · Juhu</div>
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0173-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+
+            <div class="m-item" data-cat="residential">
+                <img src="studio-osmosis-images/residential/ELR-WSA_3970-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
+                        <div class="m-cap-type">Residential · Juhu</div>
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+
+            <div class="m-item" data-cat="residential">
+                <img src="studio-osmosis-images/residential/ELR-WSA_5107-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Residential · Juhu</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= HOSPITALITY ================= -->
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0007-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0080-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0108-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0161-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0173-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="hospitality">
                 <img src="studio-osmosis-images/commercial/ELR-WSA_0188-Edit.webp"
                     onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
+
+            <div class="m-item" data-cat="hospitality">
                 <img src="studio-osmosis-images/commercial/ELR-WSA_0273-Edit.webp"
                     onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0188-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0273-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0188-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0273-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0375-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0517-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0520-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="hospitality" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSA_0615-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Architecture · Juhu</div>
-                    </div>
-                </div>
-            </div>
-            
 
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0188-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0273-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0188-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
 
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
-                <img src="studio-osmosis-images/hospitality/ELR_WSB_8116-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0273-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0375-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0517-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0520-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="hospitality">
+                <img src="studio-osmosis-images/commercial/ELR-WSA_0615-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Hospitality · Juhu</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= COMMERCIAL ================= -->
+            <div class="m-item" data-cat="commercial">
+                <img src="studio-osmosis-images/hospitality/ELR_WSB_8116-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
@@ -891,9 +910,10 @@
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR_WSB_8093-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+
+            <div class="m-item" data-cat="commercial">
+                <img src="studio-osmosis-images/commercial/ELR_WSB_8093-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
@@ -901,9 +921,10 @@
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR_WSB_8109-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+
+            <div class="m-item" data-cat="commercial">
+                <img src="studio-osmosis-images/commercial/ELR_WSB_8109-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
@@ -911,7 +932,8 @@
                     </div>
                 </div>
             </div>
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
+
+            <div class="m-item" data-cat="commercial">
                 <img src="arum images/commercial/5 copy.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
                     loading="lazy" alt="">
                 <div class="m-cap">
@@ -922,20 +944,9 @@
                 </div>
             </div>
 
-
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR_WSB_8129-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Commercial · Mumbai</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR_WSB_8148-Edit-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+            <div class="m-item" data-cat="commercial">
+                <img src="studio-osmosis-images/commercial/ELR_WSB_8129-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
@@ -944,21 +955,9 @@
                 </div>
             </div>
 
-
-
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR_WSB_8347-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Commercial · Mumbai</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSB_9164-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+            <div class="m-item" data-cat="commercial">
+                <img src="studio-osmosis-images/commercial/ELR_WSB_8148-Edit-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
@@ -967,19 +966,9 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSB_9448-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
-                <div class="m-cap">
-                    <div class="m-cap-body">
-                        <div class="m-cap-name">Master Bedroom</div>
-                        <div class="m-cap-type">Commercial · Mumbai</div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSB_9492-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+            <div class="m-item" data-cat="commercial">
+                <img src="studio-osmosis-images/commercial/ELR_WSB_8347-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
@@ -988,9 +977,9 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSB_9516-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+            <div class="m-item" data-cat="commercial">
+                <img src="studio-osmosis-images/commercial/ELR-WSB_9164-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
@@ -999,9 +988,42 @@
                 </div>
             </div>
 
-            <div class="m-item" data-cat="commercial" onclick="lb(14)">
-                <img src="studio-osmosis-images/commercial/ELR-WSB_9615-Edit.webp" onerror="this.src='arum images/_PAB3029-HDR.jpg'"
-                    loading="lazy" alt="">
+            <div class="m-item" data-cat="commercial">
+                <img src="studio-osmosis-images/commercial/ELR-WSB_9448-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Commercial · Mumbai</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="commercial">
+                <img src="studio-osmosis-images/commercial/ELR-WSB_9492-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Commercial · Mumbai</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="commercial">
+                <img src="studio-osmosis-images/commercial/ELR-WSB_9516-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
+                <div class="m-cap">
+                    <div class="m-cap-body">
+                        <div class="m-cap-name">Master Bedroom</div>
+                        <div class="m-cap-type">Commercial · Mumbai</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-item" data-cat="commercial">
+                <img src="studio-osmosis-images/commercial/ELR-WSB_9615-Edit.webp"
+                    onerror="this.src='arum images/_PAB3029-HDR.jpg'" loading="lazy" alt="">
                 <div class="m-cap">
                     <div class="m-cap-body">
                         <div class="m-cap-name">Master Bedroom</div>
@@ -1011,11 +1033,12 @@
             </div>
 
             <!-- COPY THIS BLOCK TO ADD MORE IMAGES
-  <div class="m-item" data-cat="residential" onclick="lb(15)">
-    <img src="images/aum-16.jpg" loading="lazy" alt="">
-    <div class="m-cap"><div class="m-cap-body"><div class="m-cap-name">Project Name</div><div class="m-cap-type">Type · City</div></div></div>
-  </div>
-  -->
+                 (data-cat must be: residential / commercial / hospitality)
+            <div class="m-item" data-cat="residential">
+                <img src="images/aum-16.jpg" loading="lazy" alt="">
+                <div class="m-cap"><div class="m-cap-body"><div class="m-cap-name">Project Name</div><div class="m-cap-type">Type · City</div></div></div>
+            </div>
+            -->
 
         </div>
     </div>
@@ -1046,30 +1069,67 @@
     </footer>
 
     <script>
+        /* ---------- NAV SCROLL ---------- */
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 40));
 
-        function doFilter(btn, cat) {
-            document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
-            btn.classList.add('on');
-            document.querySelectorAll('.m-item').forEach(item => {
+        /* ---------- FILTER + URL ---------- */
+        const VALID = ['all', 'residential', 'commercial', 'hospitality'];
+        const tabs = document.querySelectorAll('.ftab');
+        const items = document.querySelectorAll('.m-item');
+
+        // Show/hide items and highlight the right tab (does NOT touch the URL)
+        function applyFilter(cat) {
+            if (!VALID.includes(cat)) cat = 'all';
+
+            tabs.forEach(t => t.classList.toggle('on', t.dataset.filter === cat));
+            items.forEach(item => {
                 item.classList.toggle('hide', cat !== 'all' && item.dataset.cat !== cat);
             });
         }
 
+        // Read the category from the URL hash (page.html#residential)
+        function catFromURL() {
+            return location.hash.replace('#', '').toLowerCase() || 'all';
+        }
+
+        // Tab click -> update URL
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const cat = tab.dataset.filter;
+                if (cat === 'all') {
+                    // clean URL (no hash) for "All"
+                    history.pushState(null, '', location.pathname + location.search);
+                    applyFilter('all');
+                } else {
+                    location.hash = cat;   // triggers hashchange -> applyFilter
+                }
+            });
+        });
+
+        // Back / Forward buttons or manual hash change
+        window.addEventListener('hashchange', () => applyFilter(catFromURL()));
+        window.addEventListener('popstate', () => applyFilter(catFromURL()));
+
+        // On first load, apply whatever category is in the URL
+        applyFilter(catFromURL());
+
+        /* ---------- LIGHTBOX ---------- */
         let visible = [], cur = 0;
 
         function getVisible() {
             return Array.from(document.querySelectorAll('.m-item:not(.hide)'));
         }
 
-        function lb(globalIdx) {
-            visible = getVisible();
-            const allItems = Array.from(document.querySelectorAll('.m-item'));
-            cur = visible.indexOf(allItems[globalIdx]);
-            if (cur < 0) cur = 0;
-            show();
-        }
+        // Open the lightbox for the clicked item
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                visible = getVisible();
+                cur = visible.indexOf(item);
+                if (cur < 0) cur = 0;
+                show();
+            });
+        });
 
         function show() {
             const item = visible[cur];
@@ -1077,7 +1137,7 @@
             const img = item.querySelector('img');
             const name = item.querySelector('.m-cap-name')?.textContent || '';
             const type = item.querySelector('.m-cap-type')?.textContent || '';
-            document.getElementById('lb-img').src = img.src;
+            document.getElementById('lb-img').src = img.currentSrc || img.src;
             document.getElementById('lb-cap').textContent = name + (type ? '  ·  ' + type : '');
             document.getElementById('lb-cnt').textContent = (cur + 1) + ' / ' + visible.length;
             document.getElementById('lb-el').classList.add('open');
