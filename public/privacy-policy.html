@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | By Kurators — Dubai, UAE</title>
+    <meta name="description"
+        content="How By Kurators collects, uses and protects your personal data, in line with UAE Federal Decree-Law No. 45 of 2021 on the Protection of Personal Data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --soil: #3D2E22;
+            --bark: #6B5744;
+            --clay: #C4A882;
+            --fog: #E8DDD2;
+            --sand: #F2EBE0;
+            --white: #FFFFFF;
+            --night: #251A11;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--sand);
+            color: var(--soil);
+            overflow-x: hidden;
+        }
+
+        /* ── NAV (matches live site) ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 26px 64px;
+            transition: background .5s, padding .4s, box-shadow .4s;
+        }
+
+        nav.scrolled {
+            background: rgba(20, 12, 6, .8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 16px 64px;
+            box-shadow: 0 1px 0 var(--clay);
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            text-decoration: none;
+        }
+
+        .nav-logo .logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: cover;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: rgba(242, 235, 224, .85);
+            text-decoration: none;
+            transition: color .3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--clay);
+        }
+
+        .nav-links a.nav-cta {
+            border: 1px solid var(--clay);
+            padding: 9px 22px;
+        }
+
+        .nav-links a.nav-cta:hover {
+            background: var(--clay);
+            color: var(--soil);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--sand);
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* ── PAGE HERO ── */
+        .page-hero {
+            background: var(--night);
+            padding: 180px 64px 88px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .page-hero-inner {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 10px;
+            font-weight: 300;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--clay);
+            margin-bottom: 28px;
+        }
+
+        .eyebrow::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--clay);
+        }
+
+        .page-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            font-size: clamp(40px, 6vw, 64px);
+            line-height: 1.05;
+            letter-spacing: .035em;
+            color: var(--sand);
+        }
+
+        .page-hero h1 em {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--clay);
+        }
+
+        .page-hero p {
+            margin-top: 28px;
+            max-width: 620px;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 19px;
+            line-height: 1.65;
+            letter-spacing: .04em;
+            color: rgba(242, 235, 224, .72);
+        }
+
+        /* ── POLICY BODY ── */
+        .policy {
+            padding: 96px 64px 120px;
+        }
+
+        .policy-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 96px;
+            align-items: start;
+        }
+
+        .toc {
+            position: sticky;
+            top: 120px;
+        }
+
+        .toc-title {
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--bark);
+            margin-bottom: 20px;
+        }
+
+        .toc a {
+            display: block;
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: .06em;
+            color: var(--soil);
+            text-decoration: none;
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(196, 168, 130, .25);
+            transition: color .3s;
+        }
+
+        .toc a:hover {
+            color: var(--clay);
+        }
+
+        .content {
+            max-width: 760px;
+        }
+
+        .meta {
+            font-size: 10px;
+            font-weight: 300;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--bark);
+            padding-bottom: 32px;
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--clay);
+        }
+
+        .content section {
+            margin-bottom: 56px;
+            scroll-margin-top: 110px;
+        }
+
+        .content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--soil);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 14px;
+            align-items: baseline;
+        }
+
+        .content h2 span {
+            font-size: 10px;
+            color: var(--clay);
+            letter-spacing: .2em;
+        }
+
+        .content p,
+        .content li {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: 19px;
+            line-height: 1.65;
+            color: var(--soil);
+        }
+
+        .content p+p {
+            margin-top: 14px;
+        }
+
+        .content ul {
+            list-style: none;
+            margin: 14px 0;
+        }
+
+        .content li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 8px;
+        }
+
+        .content li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 12px;
+            height: 1px;
+            background: var(--clay);
+        }
+
+        .content strong {
+            font-weight: 400;
+        }
+
+        .content a {
+            color: var(--bark);
+            text-decoration: underline;
+            text-decoration-color: var(--clay);
+            text-underline-offset: 3px;
+        }
+
+        .contact-card {
+            margin-top: 24px;
+            padding: 32px 36px;
+            background: var(--fog);
+            border-left: 1px solid var(--clay);
+        }
+
+        .contact-card p {
+            font-size: 18px;
+        }
+
+        .contact-card .label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--bark);
+            margin-bottom: 10px;
+        }
+
+        /* ── FOOTER (matches live site) ── */
+        footer {
+            background: var(--night);
+            padding: 72px 64px 48px;
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 64px;
+            padding-bottom: 52px;
+            border-bottom: 1px solid rgba(196, 168, 130, .1);
+        }
+
+        .footer-desc {
+            font-size: 11px;
+            font-weight: 300;
+            line-height: 1.85;
+            color: rgba(255, 255, 255, .64);
+            max-width: 380px;
+            margin-top: 20px;
+        }
+
+        .footer-col-title {
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--clay);
+            margin-bottom: 20px;
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 12px;
+            font-weight: 300;
+            letter-spacing: .05em;
+            color: rgba(255, 255, 255, .8);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color .3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--clay);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            padding-top: 28px;
+        }
+
+        .footer-copy {
+            font-size: 10px;
+            font-weight: 300;
+            letter-spacing: .1em;
+            color: rgba(255, 255, 255, .74);
+        }
+
+        .footer-copy a {
+            color: rgba(255, 255, 255, .74);
+            text-decoration: none;
+        }
+
+        .footer-copy a:hover {
+            color: var(--clay);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .policy-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .toc {
+                position: static;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            nav,
+            nav.scrolled {
+                padding: 18px 24px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 78%;
+                max-width: 320px;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 28px;
+                padding: 40px;
+                background: var(--night);
+                transform: translateX(100%);
+                transition: transform .4s;
+            }
+
+            .nav-links.open {
+                transform: translateX(0);
+            }
+
+            .page-hero {
+                padding: 140px 24px 64px;
+            }
+
+            .policy {
+                padding: 64px 24px 88px;
+            }
+
+            .content p,
+            .content li {
+                font-size: 18px;
+            }
+
+            footer {
+                padding: 56px 24px 40px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="images/logo-Photoroom.png" alt="By Kurators Logo" class="logo-img">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="partners.html">Partners</a>
+            <a href="work-with-us.html">Work With Us</a>
+            <a href="index.html#contact" class="nav-cta">Get in Touch</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero-inner">
+            <div class="eyebrow">Legal · Dubai · UAE</div>
+            <h1>Privacy <em>Policy.</em></h1>
+            <p>How we collect, use and protect the information you share with us — written plainly, and in line with UAE
+                data protection law.</p>
+        </div>
+    </section>
+
+    <section class="policy">
+        <div class="policy-inner">
+
+            <aside class="toc">
+                <div class="toc-title">Contents</div>
+                <a href="#who">Who we are</a>
+                <a href="#collect">What we collect</a>
+                <a href="#use">How we use it</a>
+                <a href="#basis">Legal basis</a>
+                <a href="#share">Who we share it with</a>
+                <a href="#transfers">International transfers</a>
+                <a href="#retention">How long we keep it</a>
+                <a href="#security">Security</a>
+                <a href="#rights">Your rights</a>
+                <a href="#cookies">Cookies</a>
+                <a href="#changes">Changes to this policy</a>
+                <a href="#contact-us">Contact us</a>
+            </aside>
+
+            <div class="content">
+                <div class="meta">Effective 3 November 2026 · Last updated 3 November 2026</div>
+
+                <section id="who">
+                    <h2><span>01</span>Who we are</h2>
+                    <p>By Kurators is the trading name of <strong>ByKurators Project Consulting – FZCO</strong>, a
+                        design curation and project management consultancy based in Dubai, United Arab Emirates (“By
+                        Kurators”, “we”, “us”). We are responsible for the personal data described in this policy.</p>
+                    <p>We handle personal data in accordance with UAE Federal Decree-Law No. 45 of 2021 on the
+                        Protection of Personal Data and other applicable UAE laws.</p>
+                </section>
+
+                <section id="collect">
+                    <h2><span>02</span>What we collect</h2>
+                    <p>We collect only what we need to understand your project and respond to you.</p>
+                    <ul>
+                        <li><strong>Contact details</strong> — your name, email address and phone or WhatsApp number.
+                        </li>
+                        <li><strong>Project details</strong> — property type, location or community, project stage,
+                            indicative budget, preferred timeline, and any design preferences or files you choose to
+                            share.</li>
+                        <li><strong>Enquiry source</strong> — when you contact us through an advertisement, such as an
+                            Instagram or Facebook lead form, we receive the details you submit together with the name of
+                            the advertisement and form.</li>
+                        <li><strong>Communications</strong> — records of emails, calls, WhatsApp messages and meetings
+                            with you.</li>
+                        <li><strong>Technical information</strong> — basic data such as browser type, device and pages
+                            visited, collected when you use our website.</li>
+                    </ul>
+                    <p>We do not ask for, and ask you not to send us, sensitive personal data such as health, religious
+                        or financial account information.</p>
+                </section>
+
+                <section id="use">
+                    <h2><span>03</span>How we use it</h2>
+                    <ul>
+                        <li>To respond to your enquiry and contact you by phone, WhatsApp or email.</li>
+                        <li>To assess your brief and prepare a shortlist of design studios suited to your home, taste
+                            and budget.</li>
+                        <li>To introduce you to, and coordinate with, the design studios and contractors involved in
+                            your project.</li>
+                        <li>To manage and deliver projects, including scheduling, documentation and invoicing.</li>
+                        <li>To send occasional updates about our work, only where you have agreed to receive them.</li>
+                        <li>To improve our website, services and advertising.</li>
+                        <li>To meet our legal, tax and regulatory obligations.</li>
+                    </ul>
+                </section>
+
+                <section id="basis">
+                    <h2><span>04</span>Legal basis</h2>
+                    <p>We process your personal data on the basis of your <strong>consent</strong>, which you give when
+                        you submit an enquiry or form; where it is <strong>necessary to take steps at your request
+                            before entering into, or to perform, a contract</strong> with you; and where it is
+                        <strong>necessary to comply with our legal obligations</strong> in the UAE. You may withdraw
+                        your consent at any time, without affecting processing that took place before you withdrew it.
+                    </p>
+                </section>
+
+                <section id="share">
+                    <h2><span>05</span>Who we share it with</h2>
+                    <p>We never sell your personal data. We share it only where needed, and only with:</p>
+                    <ul>
+                        <li><strong>Design partner studios</strong> on our roster, in the UAE and abroad, so that they
+                            can consider and prepare proposals for your project. We share only the details relevant to
+                            your brief.</li>
+                        <li><strong>Contractors and suppliers</strong> engaged on your project, where you have asked us
+                            to manage delivery.</li>
+                        <li><strong>Service providers</strong> who support our business, such as customer relationship
+                            management, email, cloud storage and advertising platforms (for example, Zoho and Meta).
+                            They may process data only on our instructions.</li>
+                        <li><strong>Professional advisers and authorities</strong>, such as auditors, legal advisers, or
+                            government bodies where required by law.</li>
+                    </ul>
+                </section>
+
+                <section id="transfers">
+                    <h2><span>06</span>International transfers</h2>
+                    <p>Many of the studios we work with are based outside the UAE, including in India, and some of our
+                        service providers store data on servers outside the UAE. Where we transfer personal data
+                        internationally, we do so as permitted under UAE law and take reasonable steps — including
+                        contractual safeguards — to ensure it remains protected.</p>
+                </section>
+
+                <section id="retention">
+                    <h2><span>07</span>How long we keep it</h2>
+                    <p>We keep enquiry details for up to <strong>24 months</strong> from our last contact with you if a
+                        project does not go ahead, unless you ask us to delete them sooner. For clients, we keep project
+                        records for as long as needed to deliver the project and afterwards for the period required by
+                        UAE commercial, accounting and tax law. When data is no longer needed, we delete or anonymise it
+                        securely.</p>
+                </section>
+
+                <section id="security">
+                    <h2><span>08</span>Security</h2>
+                    <p>We use appropriate technical and organisational measures to protect your data, including access
+                        controls, secure business systems and limiting access to people who need it for their work. No
+                        method of transmission or storage is entirely secure, but we take the protection of your
+                        information seriously and review our measures regularly.</p>
+                </section>
+
+                <section id="rights">
+                    <h2><span>09</span>Your rights</h2>
+                    <p>Subject to UAE law, you have the right to:</p>
+                    <ul>
+                        <li>Access the personal data we hold about you and receive a copy.</li>
+                        <li>Ask us to correct inaccurate or incomplete data.</li>
+                        <li>Ask us to delete your data, or to restrict how we use it.</li>
+                        <li>Object to processing, including for direct marketing.</li>
+                        <li>Withdraw your consent at any time.</li>
+                        <li>Ask us to transfer your data to another organisation where technically feasible.</li>
+                    </ul>
+                    <p>To exercise any of these rights, email <a
+                            href="mailto:hello@bykurators.com">hello@bykurators.com</a>. We will respond within 30 days.
+                        You may unsubscribe from marketing messages at any time by replying “stop” or using the link in
+                        the message. If you are not satisfied with our response, you may raise a complaint with the UAE
+                        Data Office.</p>
+                </section>
+
+                <section id="cookies">
+                    <h2><span>10</span>Cookies</h2>
+                    <p>Our website may use cookies and similar technologies to keep it working properly, understand how
+                        it is used, and measure the effectiveness of our advertising, for example through the Meta
+                        Pixel. You can control or delete cookies through your browser settings; blocking some cookies
+                        may affect how the site works.</p>
+                </section>
+
+                <section id="changes">
+                    <h2><span>11</span>Changes to this policy</h2>
+                    <p>We may update this policy from time to time. The latest version will always be published on this
+                        page, with the date it was last updated. Our services are intended for adults and are not
+                        directed at anyone under 18.</p>
+                </section>
+
+                <section id="contact-us">
+                    <h2><span>12</span>Contact us</h2>
+                    <p>For any question about this policy or how we handle your data, please contact us.</p>
+                    <div class="contact-card">
+                        <div class="label">Data enquiries</div>
+                        <p>ByKurators Project Consulting – FZCO<br>
+                            Dubai, United Arab Emirates<br>
+                            <a href="mailto:hello@bykurators.com">hello@bykurators.com</a>
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div>
+                    <a href="index.html" class="nav-logo">
+                        <img src="images/logo-Photoroom%202.png" alt="By Kurators Logo" class="logo-img">
+                    </a>
+                    <p class="footer-desc">Design curation and project management consultancy, based in Dubai. Curating
+                        India's best design talent and the world's most interesting studios for clients across the
+                        Middle East and East Africa.</p>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Services</div>
+                    <a href="services.html">Design Curation</a>
+                    <a href="services.html">Project Management</a>
+                    <a href="work-with-us.html">Partner Programme</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Company</div>
+                    <a href="about.html">About</a>
+                    <a href="partners.html">Design Partners</a>
+                    <a href="index.html#portfolio">Selected Projects</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Contact</div>
+                    <a href="mailto:hello@bykurators.com">hello@bykurators.com</a>
+                    <a href="index.html">bykurators.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 By Kurators. All rights reserved. · <a href="privacy-policy.html">Privacy
+                        Policy</a></p>
+                <p class="footer-copy">Dubai, United Arab Emirates</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var nav = document.getElementById('nav');
+            var toggle = document.getElementById('menuToggle');
+            var links = document.getElementById('navLinks');
+            function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 40); }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+            toggle.addEventListener('click', function () { links.classList.toggle('open'); });
+        })();
+    </script>
+</body>
+
+</html>
