@@ -956,6 +956,18 @@
       if (Math.abs(d) > 44) navLB(d > 0 ? 1 : -1);
     });
   </script>
+  <script>
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]');
+    if (!a || typeof fbq !== 'function') return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('wa.me/') !== -1) {
+      fbq('track', 'Contact', { method: 'whatsapp' });
+    } else if (href.indexOf('mailto:') === 0) {
+      fbq('track', 'Contact', { method: 'email' });
+    }
+  });
+</script>
 </body>
 
 </html>
